@@ -3457,7 +3457,7 @@ var LinkBtn = function LinkBtn(_ref) {
     children = _ref.children,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? "" : _ref$className;
-  var defaultClasses = "hover:bg-purple-500 hover:text-white duration-300 shadow-lg hover:cursor-pointer text-lg bg-yellow-500 px-8 py-3 text-purple-500 rounded-full !font-primaryBold";
+  var defaultClasses = "hover:bg-purple-500 hover:text-white duration-300 shadow-lg hover:cursor-pointer text-lg bg-yellow-500 px-6 py-2 text-purple-500 rounded-3xl !font-primaryBold";
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "".concat(defaultClasses, " ").concat(className),
     href: href,
@@ -3840,6 +3840,24 @@ var Footer = function Footer() {
           children: "Voir nos services"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "flex flex-col space-y-4",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+          className: "text-2xl font-title font-bold",
+          children: "Informations Legales"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          href: route("privacy_policy"),
+          className: "text-md hover:text-yellow-500",
+          children: "Politique de Confidentialit\xE9"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          href: route("cgv"),
+          className: "text-md hover:text-yellow-500",
+          children: "Conditions G\xE9n\xE9rales de Vente (CGV)"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          href: route("mention"),
+          className: "text-md hover:text-yellow-500",
+          children: "Mentions L\xE9gales"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "flex flex-col items-start space-y-4",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
           className: "text-2xl font-title font-bold",
@@ -3993,25 +4011,6 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 //import ProfileDropdown from "./ProfileDropdown"
 
-var routesAbout = [{
-  name: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].about.name,
-  path: "about"
-}, {
-  name: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].team.name,
-  path: "team"
-}, {
-  name: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].faqs.name,
-  path: "faqs"
-}, {
-  name: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].terms.name,
-  path: "terms"
-}, {
-  name: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].giftCards.name,
-  path: "gift_cards"
-}, {
-  name: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].contacts.name,
-  path: "contacts"
-}];
 var Navbar = function Navbar() {
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.auth;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
@@ -4033,8 +4032,13 @@ var Navbar = function Navbar() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "hidden lg:flex items-center space-x-8  text-lg z-40 ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          className: "hover:text-yellow-500 duration-150",
           href: route("menu"),
           children: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].menu.name
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          className: "hover:text-yellow-500 duration-150",
+          href: route("service"),
+          children: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].service.name
         }), auth.user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
             href: route("shopping-cart.index"),
@@ -4090,14 +4094,10 @@ var Navbar = function Navbar() {
           href: route("menu"),
           active: route().current("menu"),
           children: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].menu.name
-        }), routesAbout.map(function (item, key) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            href: route(item.path),
-            active: route().current(item.path),
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-              children: item.name
-            })
-          }, key);
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          href: route("service"),
+          active: route().current("service"),
+          children: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].service.name
         })]
       }), auth.user && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "border-t border-gray-200 pt-4 pb-1 ",
@@ -4119,7 +4119,7 @@ var Navbar = function Navbar() {
             href: route("logout"),
             as: "button",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-              children: "Salir"
+              children: "D\xE9conexion"
             })
           })
         })]
@@ -6809,11 +6809,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var Frites = function Frites() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "bg-purple-500 pb-16",
+    className: " bg-purple-500 pt-8 pb-16",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "flex items-center justify-center relative mx-auto",
+      className: "wrap     flex items-center justify-center relative mx-auto mb-8",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-        className: "w-[30%]",
+        className: " w-[30%]",
         src: "storage/home/bg-title.png",
         alt: ""
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
@@ -7085,7 +7085,7 @@ var Services = function Services() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex items-top justify-between gap-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "w-[58%] text-black",
+        className: "w-[68%] text-black",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
           className: "font-title  text-4xl mb-8",
           children: "Deux types de livraisons"
@@ -7097,7 +7097,7 @@ var Services = function Services() {
           children: "Voir plus"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-        className: "rounded-xl w-[44%]",
+        className: "rounded-xl w-[33%]",
         src: "/storage/home/livraison.png",
         alt: ""
       })]
@@ -7281,6 +7281,183 @@ var MenuSectionList = function MenuSectionList(_ref) {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MenuSectionList);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/privacy_policy/Cgv.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/privacy_policy/Cgv.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.js");
+/* harmony import */ var _componentss_BannerHero__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/componentss/BannerHero */ "./resources/js/componentss/BannerHero.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var Ggv = function Ggv(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_componentss_BannerHero__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      img: props.page.img,
+      title: "Conditions Generales de Vente"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "container py-content max-w-5xl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "terms space-y-10",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Produits et Services"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Nous offrons une gamme vari\xE9e de burgers \xE0 emporter et en livraison. Nos produits sont pr\xE9par\xE9s avec des ingr\xE9dients frais et de qualit\xE9 pour garantir votre satisfaction."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Prix et Paiement"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Les prix affich\xE9s sur notre site sont en euros, toutes taxes comprises. Nous acceptons plusieurs m\xE9thodes de paiement s\xE9curis\xE9es pour faciliter vos achats en ligne."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Livraison"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Nos d\xE9lais de livraison sont de moins de 30 minutes. Les frais de livraison sont calcul\xE9s en fonction de votre emplacement. Vous serez inform\xE9 du d\xE9lai estim\xE9 lors de votre commande."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "R\xE9tractation et Retour"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Vous avez le droit de retourner un produit s'il ne correspond pas \xE0 votre commande ou s'il est endommag\xE9. Veuillez nous contacter pour organiser un retour et obtenir un remboursement."
+          })]
+        })]
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ggv);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/privacy_policy/Mention.js":
+/*!******************************************************!*\
+  !*** ./resources/js/Pages/privacy_policy/Mention.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.js");
+/* harmony import */ var _componentss_BannerHero__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/componentss/BannerHero */ "./resources/js/componentss/BannerHero.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var Mention = function Mention(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_componentss_BannerHero__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      img: props.page.img,
+      title: "Mentions Legales"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "container py-content max-w-5xl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "terms space-y-10",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Identit\xE9 de l'\xC9diteur"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+            children: ["Nom de l'entreprise : Burgers \xE0 Emporter", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "Adresse : 123 Rue des Gourmets, 75000 Paris", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "T\xE9l\xE9phone : +33 1 23 45 67 89", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "Email : contact@burgers-a-emporter.fr"]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Directeur de la Publication"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Le directeur de la publication est [Nom du Directeur]."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "H\xE9bergeur du Site"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+            children: ["Nom de l'h\xE9bergeur : H\xE9bergement Web S.A.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "Adresse : 456 Avenue de l'H\xE9bergeur, 75000 Paris", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "T\xE9l\xE9phone : +33 1 98 76 54 32"]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Propri\xE9t\xE9 Intellectuelle"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Tous les contenus pr\xE9sents sur ce site (textes, images, logos) sont la propri\xE9t\xE9 exclusive de Burgers \xE0 Emporter, sauf mention contraire. Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces diff\xE9rents \xE9l\xE9ments est strictement interdite sans l'accord expr\xE8s par \xE9crit de Burgers \xE0 Emporter."
+          })]
+        })]
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Mention);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/privacy_policy/PrivacyPolicy.js":
+/*!************************************************************!*\
+  !*** ./resources/js/Pages/privacy_policy/PrivacyPolicy.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.js");
+/* harmony import */ var _componentss_BannerHero__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/componentss/BannerHero */ "./resources/js/componentss/BannerHero.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var PrivacyPolicy = function PrivacyPolicy(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_componentss_BannerHero__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      img: props.page.img,
+      title: "Politique de confidentialite"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "container py-content max-w-5xl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "terms space-y-10",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Collecte des Informations"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Nous collectons diverses informations lorsque vous utilisez notre site, telles que votre nom, votre adresse e-mail, et vos informations de paiement. Ces donn\xE9es sont recueillies pour vous fournir un service personnalis\xE9 et am\xE9liorer votre exp\xE9rience utilisateur."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Utilisation des Informations"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Les informations collect\xE9es sont utilis\xE9es pour traiter vos commandes, am\xE9liorer nos services, et vous envoyer des communications promotionnelles. Vos donn\xE9es ne seront pas partag\xE9es avec des tiers sans votre consentement, sauf si cela est n\xE9cessaire pour fournir nos services ou respecter la loi."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "S\xE9curit\xE9 des Donn\xE9es"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Nous prenons des mesures de s\xE9curit\xE9 appropri\xE9es pour prot\xE9ger vos donn\xE9es contre tout acc\xE8s non autoris\xE9, alt\xE9ration, divulgation ou destruction."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+            children: "Droits des Utilisateurs"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Vous avez le droit d'acc\xE9der, de modifier, ou de supprimer vos informations personnelles \xE0 tout moment. Pour exercer ces droits, veuillez nous contacter via les coordonn\xE9es fournies sur notre site."
+          })]
+        })]
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PrivacyPolicy);
 
 /***/ }),
 
@@ -8356,8 +8533,9 @@ var Service = function Service(props) {
       title: props.page.title,
       breadcrumb: "Nos Services"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "container ",
+      className: "container pb-24",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "mb-16",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
           className: "text-3xl font-title font-bold text-center my-8",
           children: "Deux type de livraisons"
@@ -8366,28 +8544,31 @@ var Service = function Service(props) {
           children: "Bienvenue sur notre site ! Nous sommes ravis de vous offrir deux services pour r\xE9pondre \xE0 vos besoins culinaires : la livraison en moins de 30 minutes pour ceux qui pr\xE9f\xE8rent se faire livrer \xE0 domicile, et le retrait \xE0 emporter en moins de 15 minutes pour ceux qui sont en d\xE9placement. Nous nous engageons \xE0 vous offrir une exp\xE9rience rapide et de qualit\xE9, que vous choisissiez de profiter de nos plats chez vous ou en chemin. Commandez maintenant et savourez la diff\xE9rence !"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "flex items-start justify-between ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: "",
-          alt: ""
+          src: "/storage/home/livraison.png",
+          className: "w-[23%] mr-4"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl font-title font-bold text-center my-8",
+            className: "text-3xl font-title font-bold  my-8 w-[54%]",
             children: "Livraison"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             children: "Profitez de notre service de livraison rapide et efficace, con\xE7u pour vous offrir une exp\xE9rience culinaire sans stress. Nous nous engageons \xE0 livrer vos plats pr\xE9f\xE9r\xE9s directement chez vous en moins de 30 minutes. Que vous soyez \xE0 la maison, au bureau ou chez des amis, notre \xE9quipe de livraison garantit que vos repas arrivent chauds et pr\xEAts \xE0 \xEAtre d\xE9gust\xE9s. Commandez en ligne et laissez-nous nous occuper du reste, pour que vous puissiez savourer des mets d\xE9licieux sans attendre."
           })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "flex items-start justify-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          src: "/storage/home/sac.jpg",
+          className: "w-[33%]",
+          alt: ""
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl font-title font-bold text-center my-8",
+            className: "text-3xl font-title font-bold  my-8",
             children: "Retrait"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             children: "Pour ceux qui sont toujours en mouvement, notre service de retrait est la solution id\xE9ale. Passez votre commande en ligne et r\xE9cup\xE9rez-la en moins de 15 minutes dans notre \xE9tablissement. Plus besoin d'attendre longtemps ou de perdre du temps, nous pr\xE9parons votre repas avec soin et rapidit\xE9 pour que vous puissiez continuer votre journ\xE9e sans interruption. Id\xE9al pour les pauses d\xE9jeuner rapides ou les soir\xE9es charg\xE9es, notre service de retrait est l\xE0 pour simplifier votre quotidien."
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: "",
-          alt: ""
         })]
       })]
     })]
@@ -9447,7 +9628,7 @@ var BannerHero = function BannerHero(_ref) {
           className: "text-sm font-roboto font-bold uppercase leading-none",
           children: breadcrumb
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h2", {
-          className: "title-section mt-4",
+          className: "text-5xl font-title mt-4",
           children: title
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
@@ -64658,6 +64839,12 @@ var map = {
 	"./menu/Menu.js": "./resources/js/Pages/menu/Menu.js",
 	"./menu/MenuSectionList": "./resources/js/Pages/menu/MenuSectionList.js",
 	"./menu/MenuSectionList.js": "./resources/js/Pages/menu/MenuSectionList.js",
+	"./privacy_policy/Cgv": "./resources/js/Pages/privacy_policy/Cgv.js",
+	"./privacy_policy/Cgv.js": "./resources/js/Pages/privacy_policy/Cgv.js",
+	"./privacy_policy/Mention": "./resources/js/Pages/privacy_policy/Mention.js",
+	"./privacy_policy/Mention.js": "./resources/js/Pages/privacy_policy/Mention.js",
+	"./privacy_policy/PrivacyPolicy": "./resources/js/Pages/privacy_policy/PrivacyPolicy.js",
+	"./privacy_policy/PrivacyPolicy.js": "./resources/js/Pages/privacy_policy/PrivacyPolicy.js",
 	"./product/Description": "./resources/js/Pages/product/Description.js",
 	"./product/Description.js": "./resources/js/Pages/product/Description.js",
 	"./product/Feature": "./resources/js/Pages/product/Feature.js",

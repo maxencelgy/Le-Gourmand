@@ -130,4 +130,27 @@ class PageController extends Controller
             "related_products" => ProductResource::collection($related_products)
         ]);
     }
+
+
+    public function privacy_policy()
+    {
+        $page = Page::where('type', 'terms')->first();
+        return Inertia::render('privacy_policy/PrivacyPolicy', [
+            "page" => $page,
+        ]);
+    }
+    public function cgv()
+    {
+        $page = Page::where('type', 'terms')->first();
+        return Inertia::render('privacy_policy/Cgv', [
+            "page" => $page,
+        ]);
+    }
+    public function mention()
+    {
+        $page = Page::where('type', 'terms')->first();
+        return Inertia::render('privacy_policy/Mention', [
+            "page" => $page,
+        ]);
+    }
 }

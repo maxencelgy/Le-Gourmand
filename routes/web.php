@@ -50,7 +50,10 @@ Route::get('/gift_cards', [PageController::class, 'gift_cards'])->name('gift_car
 Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
 Route::get('/product/{slug}', [PageController::class, 'product'])->name('product');
 
-
+// Policy
+Route::get('/politique-de-confidentialite', [PageController::class, 'privacy_policy'])->name('privacy_policy');
+Route::get('/cgv', [PageController::class, 'cgv'])->name('cgv');
+Route::get('/mentions-legales', [PageController::class, 'mention'])->name('mention');
 
 // Route::get('/dashboard', function () {
 //     //return Inertia::render('Dashboard');

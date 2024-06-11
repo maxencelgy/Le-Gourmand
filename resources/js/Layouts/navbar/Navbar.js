@@ -11,32 +11,6 @@ import Button from "@/Components/Button";
 import LinkBtn from "@/Components/LinkBtn";
 
 //import ProfileDropdown from "./ProfileDropdown"
-const routesAbout = [
-    {
-        name: routes.about.name,
-        path: "about",
-    },
-    {
-        name: routes.team.name,
-        path: "team",
-    },
-    {
-        name: routes.faqs.name,
-        path: "faqs",
-    },
-    {
-        name: routes.terms.name,
-        path: "terms",
-    },
-    {
-        name: routes.giftCards.name,
-        path: "gift_cards",
-    },
-    {
-        name: routes.contacts.name,
-        path: "contacts",
-    },
-];
 const Navbar = () => {
     const { auth } = usePage().props;
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
@@ -52,15 +26,10 @@ const Navbar = () => {
 
                 {/* Desktop */}
                 <div className="hidden lg:flex items-center space-x-8  text-lg z-40 ">
-                    <Link href={route("menu")}>{routes.menu.name}</Link>
+                    <Link className="hover:text-yellow-500 duration-150" href={route("menu")}>{routes.menu.name}</Link>
+                    <Link className="hover:text-yellow-500 duration-150" href={route("service")}>{routes.service.name}</Link>
 
-                    {/*<Link href={route("gallery")}>{routes.gallery.name}</Link>*/}
 
-                    {/*<Link href={route("locations")}>*/}
-                    {/*    {routes.location.name}*/}
-                    {/*</Link>*/}
-
-                    {/*<MenuHeader title="Nosotros" data={routesAbout} />*/}
 
 
 
@@ -141,28 +110,16 @@ const Navbar = () => {
                         {routes.menu.name}
                     </ResponsiveNavLink>
 
-                    {/*<ResponsiveNavLink*/}
-                    {/*    href={route("gallery")}*/}
-                    {/*    active={route().current("gallery")}*/}
-                    {/*>*/}
-                    {/*    {routes.gallery.name}*/}
-                    {/*</ResponsiveNavLink>*/}
 
-                    {/*<ResponsiveNavLink*/}
-                    {/*    href={route("locations")}*/}
-                    {/*    active={route().current("locations")}*/}
-                    {/*>*/}
-                    {/*    {routes.location.name}*/}
-                    {/*</ResponsiveNavLink>*/}
-                    {routesAbout.map((item, key) => (
-                        <ResponsiveNavLink
-                            key={key}
-                            href={route(item.path)}
-                            active={route().current(item.path)}
-                        >
-                            <div>{item.name}</div>
-                        </ResponsiveNavLink>
-                    ))}
+                    <ResponsiveNavLink
+                        href={route("service")}
+                        active={route().current("service")}
+                    >
+                        {routes.service.name}
+                    </ResponsiveNavLink>
+
+
+
                 </div>
                 {auth.user && (
                     <div className="border-t border-gray-200 pt-4 pb-1 ">
@@ -184,7 +141,7 @@ const Navbar = () => {
                                 href={route("logout")}
                                 as="button"
                             >
-                                <div>Salir</div>
+                                <div>Déconexion</div>
                             </ResponsiveNavLink>
                         </div>
                     </div>
