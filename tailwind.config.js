@@ -40,6 +40,7 @@ module.exports = {
         fontFamily: {
             primary: ["Poppins"],
             primaryBold: ["PoppinsBold"],
+            light: ["PoppinsLight"],
             title: ["BurgerFree"],
             subTitle: ["MontegoBay"],
             sans: ['"Poppins"', 'sans-serif'],

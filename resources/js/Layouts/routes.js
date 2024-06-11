@@ -9,6 +9,9 @@ const routes = {
     menu: {
         name: "Carte",
     },
+    service: {
+        name: "Nos Services",
+    },
     about: {
         name: "Acerca de Nosotros",
     },

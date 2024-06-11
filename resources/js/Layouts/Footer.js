@@ -1,47 +1,39 @@
+import React from 'react';
+import Logo from './Logo'; // Assuming you have a Logo component
+import routes from './routes';
+import {Link} from "@inertiajs/inertia-react"; // Assuming you have a routes file for navigation
 
-import Logo from "./Logo"
-import routes from "./routes"
 const Footer = () => {
     return (
-        <div className="py-content border-t border-gray-200">
-            <div className="text-center text-gray-700">
-                <div className="text-4xl text-yellow-500">
-                    <Logo />
+        <div className="py-content border-t border-gray-200 bg-black text-white">
+            <div className="container mx-auto flex justify-between items-start pb-8">
+                <div className="flex flex-col space-y-4">
+                    <h3 className="text-2xl font-title font-bold">NOTRE CARTE</h3>
+                    <Link href={route("menu")} className="text-lg hover:text-yellow-500">Voir la carte</Link>
+
                 </div>
-                <div className="mt-6">
-                    <div className="inline-flex space-x-3 ">
-                        <img className="w-9 h-9" src="/storage/social/facebook-icon.png" alt="" />
-                        <img className="w-9 h-9" src="/storage/social/instagram-icon.png" alt="" />
-                        <img className="w-9 h-9" src="/storage/social/twt-icon.png" alt="" />
-                        <img className="w-9 h-9" src="/storage/social/ws-icon.png" alt="" />
-                    </div>
+                <div className="flex flex-col space-y-4">
+                    <h3 className="text-2xl font-title font-bold">{routes.service.name}</h3>
+                    <Link href={route("service")} className="text-lg hover:text-yellow-500">Voir nos services</Link>
+
                 </div>
-                <div className="mt-6">
-                    <div className="inline-flex flex-wrap divide-x divide-gray-500 font-bold  justify-center uppercase">
-                        <a href='/' className="px-3 lg:px-5 mb-4 leading-none">
-                            {routes.about.name}
-                        </a>
-                        <a href='/' className="px-3 lg:px-5 mb-4 leading-none">
-                            {routes.menu.name}
-                        </a>
-                        <a href='/' className="px-3 lg:px-5 mb-4 leading-none">
-                            {routes.location.name}
-                        </a>
-                        <a href='/' className="px-3 lg:px-5 mb-4 leading-none">
-                            {routes.gallery.name}
-                        </a>
-                        <a href='/' className="px-3 lg:px-5 mb-4 leading-none">
-                            {routes.giftCards.name}
-                        </a>
-                        <a href='/' className="px-3 lg:px-5 mb-4 leading-none">
-                            {routes.contacts.name}
-                        </a>
+
+                <div className="flex flex-col items-start space-y-4">
+                    <span className="text-2xl font-title font-bold">POUR NOUS SUIVRE</span>
+                    <div className="flex space-x-4">
+                        <img className="hover:cursor-pointer w-9 h-9" src="/storage/social/facebook-icon.png"
+                             alt="Facebook"/>
+                        <img className="hover:cursor-pointer w-9 h-9" src="/storage/social/instagram-icon.png"
+                             alt="Instagram"/>
+                        <img className="hover:cursor-pointer w-9 h-9" src="/storage/social/twt-icon.png" alt="Twitter"/>
+                        <img className="hover:cursor-pointer w-9 h-9" src="/storage/social/ws-icon.png" alt="WhatsApp"/>
                     </div>
-                    <div className="mt-4 font-light">© 2020 Testo. All Rights Reserved</div>
+                    <span className="text-xs">Pour votre santé, pratiquez une activité physique régulière : <a
+                        href="https://www.mangerbouger.fr" className="underline">www.mangerbouger.fr</a></span>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Footer
+export default Footer;

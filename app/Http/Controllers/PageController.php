@@ -17,8 +17,8 @@ use Inertia\Inertia;
 class PageController extends Controller
 {
     public function home()
-    {   
-       
+    {
+
         $menus = Category::inRandomOrder()->take(2)->where('type', 'menu')->with('products')->get();
 
         $products_featured  = Product::inRandomOrder()->take(8)->whereHas('category', function (Builder $query) {
@@ -43,6 +43,14 @@ class PageController extends Controller
 
         return Inertia::render('menu/Menu', [
             "menu" => CategoryResource::collection($menus),
+            "page" => $page,
+        ]);
+    }
+    public function service()
+    {
+        $page = Page::where('type', 'service')->first();
+
+        return Inertia::render('service/Service', [
             "page" => $page,
         ]);
     }

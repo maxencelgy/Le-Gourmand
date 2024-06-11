@@ -6,40 +6,32 @@ import MenuList from "./MenuList"
 import AppLayout from "@/Layouts/AppLayout"
 import Promos from "./Promos"
 import HomeHero from "../../componentss/HomeHero";
+import Frites from "@/Pages/home/Frites";
+import Services from "@/Pages/home/Services";
 
 const Home = (props) => {
 
     return (
         <AppLayout title="Début">
-            <HomeHero  />
+            <HomeHero/>
             <div className="container ">
-                <div className=" py-content">
-                    <Promos promos={props.promos}/>
-                </div>
-                <div className=" py-content">
-                    <div className="text-center">
-                        <h3 className="title-section text-red-500">EXPLORA NUESTRO MENÚ</h3>
+                {/*<div className=" py-content">*/}
+                {/*    <Promos promos={props.promos}/>*/}
+                {/*</div>*/}
+                <div className="mb-8">
+                    <div className="flex items-center justify-center relative mx-auto">
+                        <img className="w-[30%]" src="storage/home/bg-title.png" alt=""/>
+                        <h3 className="absolute text-4xl font-title text-purple-500 mb-4">Nos burgers</h3>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:mt-8 lg:mt-16">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-4 lg:mt-4">
                         {props.products_featured.data.map((product) => (
-                            <ProductItem product={product} key={product.id} />
+                            <ProductItem product={product} key={product.id}/>
                         ))}
                     </div>
                 </div>
             </div>
-            <div className=" px-0 mx-3 py-content  ">
-                <Promo />
-            </div>
-            <div className="container   ">
-                {props.menus.data.map((category, index) => (
-                    <div className="py-content" key={index}>
-                        <MenuList title={category.name} products={category.products} img={category.img} />
-                    </div>
-                ))}
-            </div>
-            <div className=" pt-content">
-                <BannerDelivery />
-            </div>
+            <Frites/>
+            <Services/>
         </AppLayout>
     )
 }

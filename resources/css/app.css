@@ -24,6 +24,12 @@
     src: url('fonts/Poppins-ExtraBold.ttf'),
     url('fonts/Poppins-ExtraBold.ttf');
 }
+@font-face {
+    font-family: 'PoppinsLight';
+    src: url('fonts/Poppins-Light.ttf'),
+    url('fonts/Poppins-Light.ttf');
+}
+
 
 @font-face {
     font-family: 'MontegoBay';
