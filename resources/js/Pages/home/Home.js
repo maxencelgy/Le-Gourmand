@@ -1,13 +1,14 @@
-import BannerHero from "../../componentss/BannerHero"
 import ProductItem from "../../componentss/ProductItem"
-import Promo from "../../componentss/ThreeCards"
-import BannerDelivery from "./BannerDelivery"
-import MenuList from "./MenuList"
 import AppLayout from "@/Layouts/AppLayout"
-import Promos from "./Promos"
 import HomeHero from "../../componentss/HomeHero";
 import Frites from "@/Pages/home/Frites";
 import Services from "@/Pages/home/Services";
+import LinkBtn from "@/Components/LinkBtn";
+import {useEffect} from 'react';
+import TitleSection from "@/Components/TitleSection";
+import Team from "@/Pages/team/Team";
+import people from "@/Pages/team/people.json";
+import TeamItem from "@/Pages/team/TeamItem";
 
 const Home = (props) => {
 
@@ -19,19 +20,38 @@ const Home = (props) => {
                 {/*    <Promos promos={props.promos}/>*/}
                 {/*</div>*/}
                 <div className="mb-8">
-                    <div className="flex items-center justify-center relative mx-auto">
-                        <img className="w-[30%]" src="storage/home/bg-title.png" alt=""/>
-                        <h3 className="absolute text-4xl font-title text-purple-500 mb-4">Nos burgers</h3>
-                    </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-4 lg:mt-4">
+
+                    <TitleSection title="Nos burgers"/>
+
+                    <div className="mb-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-4 lg:mt-4">
                         {props.products_featured.data.map((product) => (
                             <ProductItem product={product} key={product.id}/>
                         ))}
                     </div>
+                    <div className="flex py-16 items-center justify-center">
+                        <LinkBtn className=" mx-auto" href="/menu">Voir tout nos burgers</LinkBtn>
+                    </div>
                 </div>
             </div>
-            <Frites/>
+            {/*<Frites/>*/}
+            <div className="bg-purple-500">
+
+                <TitleSection title="Notre equipe"/>
+                <div className="container pb-16 ">
+                    <div
+                        className="text-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 ">
+                        {people.map((person) => (
+                            <TeamItem person={person}/>
+                        ))}
+
+                    </div>
+                </div>
+
+            </div>
             <Services/>
+
+
+
         </AppLayout>
     )
 }

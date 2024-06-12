@@ -14,7 +14,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col space-y-4">
                     <h3 className="text-2xl font-title font-bold">{routes.service.name}</h3>
-                    <Link href={route("service")} className="text-lg hover:text-yellow-500">Voir nos services</Link>
+                    <Link href={route("service")} className="text-lg hover:text-yellow-500">Voir notre service</Link>
 
                 </div>
                 <div className="flex flex-col space-y-4">

@@ -3457,7 +3457,7 @@ var LinkBtn = function LinkBtn(_ref) {
     children = _ref.children,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? "" : _ref$className;
-  var defaultClasses = "hover:bg-purple-500 hover:text-white duration-300 shadow-lg hover:cursor-pointer text-lg bg-yellow-500 px-6 py-2 text-purple-500 rounded-3xl !font-primaryBold";
+  var defaultClasses = "hover:bg-purple-500 hover:text-white duration-300 shadow-lg hover:cursor-pointer text-lg bg-yellow-500 px-6 py-2 text-purple-500 rounded-xl !font-primaryBold";
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "".concat(defaultClasses, " ").concat(className),
     href: href,
@@ -3532,6 +3532,39 @@ function ResponsiveNavLink(_ref) {
     children: children
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/Components/TitleSection.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Components/TitleSection.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var TitleSection = function TitleSection(_ref) {
+  var title = _ref.title;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "wrap flex items-center justify-center relative mx-auto mb-16",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      className: " w-[30%]",
+      src: "storage/home/bg-title.png",
+      alt: ""
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+      className: "absolute text-4xl font-title text-purple-500 mb-4",
+      children: title
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TitleSection);
 
 /***/ }),
 
@@ -3837,7 +3870,7 @@ var Footer = function Footer() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
           href: route("service"),
           className: "text-lg hover:text-yellow-500",
-          children: "Voir nos services"
+          children: "Voir notre service"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "flex flex-col space-y-4",
@@ -4012,15 +4045,29 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 //import ProfileDropdown from "./ProfileDropdown"
 
 var Navbar = function Navbar() {
-  var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.auth;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState2 = _slicedToArray(_useState, 2),
-    showingNavigationDropdown = _useState2[0],
-    setShowingNavigationDropdown = _useState2[1];
+    scrolled = _useState2[0],
+    setScrolled = _useState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleScroll = function handleScroll() {
+      var isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return function () {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.auth;
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    showingNavigationDropdown = _useState4[0],
+    setShowingNavigationDropdown = _useState4[1];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("nav", {
-    className: "container bg-white lg:bg-transparent py-2 lg:text-white lg:absolute inset-x-0  ",
+    className: " py-2 sticky top-0 z-[999] duration-150 mt-[-8rem] inset-x-0 ".concat(scrolled ? 'bg-purple-600 text-white shadow-2xl   ' : 'bg-transparent text-gray-800', " lg:text-white"),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: "h-16 lg:h-20 flex items-center justify-between lg:py-5",
+      className: "container h-16 lg:h-20 flex items-center justify-between lg:py-5",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "text-2xl",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
@@ -4271,7 +4318,7 @@ var routes = {
     name: "Carte"
   },
   service: {
-    name: "Nos Services"
+    name: "Notre service"
   },
   about: {
     name: "Acerca de Nosotros"
@@ -6805,37 +6852,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_TitleSection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/TitleSection */ "./resources/js/Components/TitleSection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 var Frites = function Frites() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: " bg-purple-500 pt-8 pb-16",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "wrap     flex items-center justify-center relative mx-auto mb-8",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-        className: " w-[30%]",
-        src: "storage/home/bg-title.png",
-        alt: ""
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
-        className: "absolute text-4xl font-title text-purple-500 mb-4",
-        children: "Nos frites"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: " bg-purple-500 pt-4 pb-20",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      title: "Nos frites"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "wrap",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "flex items-top justify-between gap-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-          className: "rounded-xl w-[43%]",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "rounded-lg w-[43%]",
           src: "/storage/home/frites.jpeg",
           alt: ""
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-          className: "w-[54%] text-white",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h2", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "w-[51%] text-white",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
             className: "font-title  text-4xl mb-8",
             children: "Des Frites 100% maison"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
             className: "font-normal",
-            children: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque ipsa libero natus pariatur quam quia ratione rem. Accusantium dicta dolor laudantium maiores pariatur. Ab accusantium aliquam aspernatur atque consequatur doloremque earum eos facilis in iusto laborum libero minus, quae quas qui quibusdam quis repellendus reprehenderit sint suscipit tempora voluptas voluptates."
+            children: "D\xE9couvrez le go\xFBt authentique de nos frites 100% maison, pr\xE9par\xE9es quotidiennement avec des pommes de terre fra\xEEches et soigneusement s\xE9lectionn\xE9es. Cuites dans une huile de qualit\xE9, elles sont croustillantes \xE0 l'ext\xE9rieur et moelleuses \xE0 l'int\xE9rieur. Servez-vous de nos sauces maison pour enrichir votre exp\xE9rience. Parfaites pour toute occasion, nos frites vous offriront un moment de pur plaisir gustatif."
           })]
         })]
       })
@@ -6857,17 +6898,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _componentss_BannerHero__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../componentss/BannerHero */ "./resources/js/componentss/BannerHero.js");
-/* harmony import */ var _componentss_ProductItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../componentss/ProductItem */ "./resources/js/componentss/ProductItem.js");
-/* harmony import */ var _componentss_ThreeCards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../componentss/ThreeCards */ "./resources/js/componentss/ThreeCards.js");
-/* harmony import */ var _BannerDelivery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BannerDelivery */ "./resources/js/Pages/home/BannerDelivery.js");
-/* harmony import */ var _MenuList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MenuList */ "./resources/js/Pages/home/MenuList.js");
-/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.js");
-/* harmony import */ var _Promos__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Promos */ "./resources/js/Pages/home/Promos.js");
-/* harmony import */ var _componentss_HomeHero__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../componentss/HomeHero */ "./resources/js/componentss/HomeHero.js");
-/* harmony import */ var _Pages_home_Frites__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Pages/home/Frites */ "./resources/js/Pages/home/Frites.js");
-/* harmony import */ var _Pages_home_Services__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Pages/home/Services */ "./resources/js/Pages/home/Services.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _componentss_ProductItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../componentss/ProductItem */ "./resources/js/componentss/ProductItem.js");
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.js");
+/* harmony import */ var _componentss_HomeHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../componentss/HomeHero */ "./resources/js/componentss/HomeHero.js");
+/* harmony import */ var _Pages_home_Frites__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Pages/home/Frites */ "./resources/js/Pages/home/Frites.js");
+/* harmony import */ var _Pages_home_Services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Pages/home/Services */ "./resources/js/Pages/home/Services.js");
+/* harmony import */ var _Components_LinkBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/LinkBtn */ "./resources/js/Components/LinkBtn.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Components_TitleSection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/TitleSection */ "./resources/js/Components/TitleSection.js");
+/* harmony import */ var _Pages_team_Team__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Pages/team/Team */ "./resources/js/Pages/team/Team.js");
+/* harmony import */ var _Pages_team_people_json__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Pages/team/people.json */ "./resources/js/Pages/team/people.json");
+/* harmony import */ var _Pages_team_TeamItem__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/Pages/team/TeamItem */ "./resources/js/Pages/team/TeamItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -6880,32 +6923,46 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Home = function Home(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "D\xE9but",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_componentss_HomeHero__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_componentss_HomeHero__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "container ",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "mb-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-          className: "flex items-center justify-center relative mx-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("img", {
-            className: "w-[30%]",
-            src: "storage/home/bg-title.png",
-            alt: ""
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h3", {
-            className: "absolute text-4xl font-title text-purple-500 mb-4",
-            children: "Nos burgers"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-          className: "grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-4 lg:mt-4",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          title: "Nos burgers"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+          className: "mb-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-4 lg:mt-4",
           children: props.products_featured.data.map(function (product) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_componentss_ProductItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_componentss_ProductItem__WEBPACK_IMPORTED_MODULE_0__["default"], {
               product: product
             }, product.id);
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+          className: "flex py-16 items-center justify-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_LinkBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            className: " mx-auto",
+            href: "/menu",
+            children: "Voir tout nos burgers"
+          })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Pages_home_Frites__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Pages_home_Services__WEBPACK_IMPORTED_MODULE_9__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+      className: "bg-purple-500",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        title: "Notre equipe"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+        className: "container pb-16 ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+          className: "text-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 ",
+          children: _Pages_team_people_json__WEBPACK_IMPORTED_MODULE_9__.map(function (person) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Pages_team_TeamItem__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              person: person
+            });
+          })
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Pages_home_Services__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
@@ -7066,39 +7123,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Components_LinkBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/LinkBtn */ "./resources/js/Components/LinkBtn.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_TitleSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/TitleSection */ "./resources/js/Components/TitleSection.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 var Services = function Services() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "wrap pb-8",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "flex items-center justify-center relative mx-auto mb-8",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-        className: "w-[30%]",
-        src: "storage/home/bg-title.png",
-        alt: ""
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-        className: "absolute text-4xl font-title text-purple-500 mb-4",
-        children: "Nos Services"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "flex items-top justify-between gap-4",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "wrap pt-4 pb-20",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      title: "Notre service"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "flex  items-top justify-between gap-4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "w-[68%] text-black",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-          className: "font-title  text-4xl mb-8",
-          children: "Deux types de livraisons"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          className: "font-title text-4xl mb-8",
+          children: "Retrait de votre commande "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "font-normal mb-6",
-          children: "Bienvenue sur notre site ! Nous sommes ravis de vous offrir deux services pour r\xE9pondre \xE0 vos besoins culinaires : la livraison en moins de 30 minutes pour ceux qui pr\xE9f\xE8rent se faire livrer \xE0 domicile, et le retrait \xE0 emporter en moins de 15 minutes pour ceux qui sont en d\xE9placement. Nous nous engageons \xE0 vous offrir une exp\xE9rience rapide et de qualit\xE9, que vous choisissiez de profiter de nos plats chez vous ou en chemin. Commandez maintenant et savourez la diff\xE9rence !"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Components_LinkBtn__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          children: " Nous sommes ravis de vous offrir un service de retrait en moins de 30 minutes pour r\xE9pondre \xE0 vos besoins culinaires. Que vous soyez en d\xE9placement ou pr\xE9f\xE9riez r\xE9cup\xE9rer votre commande rapidement, nous nous engageons \xE0 vous offrir une exp\xE9rience rapide et de qualit\xE9. Commandez maintenant et savourez la diff\xE9rence !"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_LinkBtn__WEBPACK_IMPORTED_MODULE_0__["default"], {
           href: route("service"),
           children: "Voir plus"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-        className: "rounded-xl w-[33%]",
-        src: "/storage/home/livraison.png",
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        className: "rounded-xl w-[23%]",
+        src: "/storage/home/pickup.png",
         alt: ""
       })]
     })]
@@ -8522,54 +8573,86 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _componentss_BannerHero__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/componentss/BannerHero */ "./resources/js/componentss/BannerHero.js");
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_LinkBtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/LinkBtn */ "./resources/js/Components/LinkBtn.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 var Service = function Service(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_componentss_BannerHero__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_componentss_BannerHero__WEBPACK_IMPORTED_MODULE_0__["default"], {
       img: props.page.img,
       title: props.page.title,
-      breadcrumb: "Nos Services"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      breadcrumb: "Notre Service"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "container pb-24",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "mb-16",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
           className: "text-3xl font-title font-bold text-center my-8",
-          children: "Deux type de livraisons"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Retrait de votre commande en moins de 30 minutes"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           className: "text-center",
-          children: "Bienvenue sur notre site ! Nous sommes ravis de vous offrir deux services pour r\xE9pondre \xE0 vos besoins culinaires : la livraison en moins de 30 minutes pour ceux qui pr\xE9f\xE8rent se faire livrer \xE0 domicile, et le retrait \xE0 emporter en moins de 15 minutes pour ceux qui sont en d\xE9placement. Nous nous engageons \xE0 vous offrir une exp\xE9rience rapide et de qualit\xE9, que vous choisissiez de profiter de nos plats chez vous ou en chemin. Commandez maintenant et savourez la diff\xE9rence !"
+          children: "Bienvenue sur notre site ! Nous sommes ravis de vous offrir un service de retrait de commande en moins de 30 minutes pour r\xE9pondre \xE0 vos besoins culinaires. Que vous soyez en d\xE9placement ou pr\xE9f\xE9riez r\xE9cup\xE9rer votre commande rapidement, nous nous engageons \xE0 vous offrir une exp\xE9rience rapide et de qualit\xE9. Commandez maintenant et savourez la diff\xE9rence !"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "flex items-start justify-between ",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: "/storage/home/livraison.png",
-          className: "w-[23%] mr-4"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl font-title font-bold  my-8 w-[54%]",
-            children: "Livraison"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            children: "Profitez de notre service de livraison rapide et efficace, con\xE7u pour vous offrir une exp\xE9rience culinaire sans stress. Nous nous engageons \xE0 livrer vos plats pr\xE9f\xE9r\xE9s directement chez vous en moins de 30 minutes. Que vous soyez \xE0 la maison, au bureau ou chez des amis, notre \xE9quipe de livraison garantit que vos repas arrivent chauds et pr\xEAts \xE0 \xEAtre d\xE9gust\xE9s. Commandez en ligne et laissez-nous nous occuper du reste, pour que vous puissiez savourer des mets d\xE9licieux sans attendre."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: " mb-16 flex items-start justify-center ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "text-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+            className: "text-3xl font-title font-bold my-8",
+            children: "Comment Ca Marche ?"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            className: "",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ol", {
+              className: " ",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+                  children: "Choisissez vos plats :"
+                }), " Parcourez notre menu en ligne et s\xE9lectionnez vos plats pr\xE9f\xE9r\xE9s."]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+                  children: "Passez votre commande :"
+                }), " Ajoutez les articles \xE0 votre panier et confirmez votre commande."]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+                  children: "R\xE9cup\xE9rez en 30 minutes :"
+                }), " Votre commande sera pr\xEAte en moins de 30 minutes, pr\xEAte \xE0 \xEAtre retir\xE9e \xE0 notre point de retrait."]
+              })]
+            })
           })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "mt-16 text-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          className: "text-3xl font-title font-bold my-8",
+          children: "Pourquoi Choisir Notre Service de Retrait ?"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "mx-auto w-[75%]",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+            className: " ",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+                children: "Rapidit\xE9 :"
+              }), " Votre commande pr\xEAte en moins de 30 minutes."]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+                children: "Qualit\xE9 :"
+              }), " Des plats pr\xE9par\xE9s avec des ingr\xE9dients frais et de qualit\xE9."]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+                children: "Commodit\xE9 :"
+              }), " Un processus de commande en ligne simple et rapide."]
+            })]
+          })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "flex items-start justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          src: "/storage/home/sac.jpg",
-          className: "w-[33%]",
-          alt: ""
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            className: "text-3xl font-title font-bold  my-8",
-            children: "Retrait"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            children: "Pour ceux qui sont toujours en mouvement, notre service de retrait est la solution id\xE9ale. Passez votre commande en ligne et r\xE9cup\xE9rez-la en moins de 15 minutes dans notre \xE9tablissement. Plus besoin d'attendre longtemps ou de perdre du temps, nous pr\xE9parons votre repas avec soin et rapidit\xE9 pour que vous puissiez continuer votre journ\xE9e sans interruption. Id\xE9al pour les pauses d\xE9jeuner rapides ou les soir\xE9es charg\xE9es, notre service de retrait est l\xE0 pour simplifier votre quotidien."
-          })]
-        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "flex justify-center mt-8",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_LinkBtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          href: "/menu",
+          children: "Voir le Menu et Commander"
+        })
       })]
     })]
   });
@@ -9698,7 +9781,7 @@ var HomeHero = function HomeHero() {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               className: "mb-8 max-w-md ",
-              children: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores atque commodi eum expedita iure nisi pariatur? Adipisci animi blanditiis commodi consequatur, debitis delectus dolore doloribus ea eaque eos "
+              children: "Un steak de b\u0153uf juteux, du fromage fondant, de la laitue croquante, des tomates fra\xEEches et une sauce irr\xE9sistible. Tout cela dans un pain aux graines de s\xE9same grill\xE9. Un vrai r\xE9gal pour vos papilles ! "
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_LinkBtn__WEBPACK_IMPORTED_MODULE_1__["default"], {
               href: "/menu",
               children: "Commander"
@@ -9877,7 +9960,7 @@ var ProductItem = function ProductItem(_ref) {
       slug: product.slug
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "max-w-[280px] group hover:bg-yellow-500 duration-150 rounded-lg bg-[#F5F5F5] flex flex-col justify-between py-6 px-4 h-full shadow-md",
+      className: "max-w-[280px] group hover:bg-yellow-500 duration-150  bg-[#F5F5F5] flex flex-col justify-between py-6 px-4 h-full  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "flex flex-col items-center flex-grow",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
@@ -9892,9 +9975,9 @@ var ProductItem = function ProductItem(_ref) {
           children: product.description_min
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white fill-current text-purple-500 shadow-md py-2 px-6 bg-yellow-400 flex rounded-3xl items-center",
+        className: "flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white fill-current text-purple-500 shadow-md py-2 px-6 bg-yellow-500  rounded-xl ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
-          className: "w-5 stroke-current group-hover:stroke-white",
+          className: "w-4  stroke-current group-hover:stroke-white",
           width: "29",
           height: "29",
           viewBox: "0 0 29 29",
@@ -9902,22 +9985,22 @@ var ProductItem = function ProductItem(_ref) {
           xmlns: "http://www.w3.org/2000/svg",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
             d: "M9.33341 27.4167C10.0468 27.4167 10.6251 26.8384 10.6251 26.125C10.6251 25.4117 10.0468 24.8334 9.33341 24.8334C8.62005 24.8334 8.04175 25.4117 8.04175 26.125C8.04175 26.8384 8.62005 27.4167 9.33341 27.4167Z",
-            "stroke-width": "3",
+            "stroke-width": "4",
             "stroke-linecap": "round",
             "stroke-linejoin": "round"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
             d: "M23.5417 27.4167C24.255 27.4167 24.8333 26.8384 24.8333 26.125C24.8333 25.4117 24.255 24.8334 23.5417 24.8334C22.8283 24.8334 22.25 25.4117 22.25 26.125C22.25 26.8384 22.8283 27.4167 23.5417 27.4167Z",
-            "stroke-width": "3",
+            "stroke-width": "4",
             "stroke-linecap": "round",
             "stroke-linejoin": "round"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
             d: "M1.64795 1.64795H4.23128L7.66712 17.6904C7.79315 18.278 8.12006 18.8032 8.59158 19.1757C9.06309 19.5482 9.6497 19.7446 10.2504 19.7313H22.8829C23.4709 19.7303 24.0409 19.5289 24.4989 19.1602C24.9568 18.7914 25.2753 18.2776 25.4017 17.7034L27.5329 8.10628H5.61337",
-            "stroke-width": "3",
+            "stroke-width": "4",
             "stroke-linecap": "round",
             "stroke-linejoin": "round"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "font-bold ml-4 text-sm leading-none",
+          className: "font-extrabold ml-4 text-sm leading-none",
           children: "Ajouter au panier"
         })]
       })]

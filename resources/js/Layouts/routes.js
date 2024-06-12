@@ -10,7 +10,7 @@ const routes = {
         name: "Carte",
     },
     service: {
-        name: "Nos Services",
+        name: "Notre service",
     },
     about: {
         name: "Acerca de Nosotros",

@@ -1,5 +1,6 @@
 import BannerHero from "@/componentss/BannerHero";
 import AppLayout from "@/Layouts/AppLayout";
+import LinkBtn from "@/Components/LinkBtn";
 
 const Service = (props) => {
     return (
@@ -7,42 +8,40 @@ const Service = (props) => {
             <BannerHero
                 img={props.page.img}
                 title={props.page.title}
-                breadcrumb="Nos Services"
+                breadcrumb="Notre Service"
             />
             <div className="container pb-24">
                 <div className="mb-16">
-                    <h2 className="text-3xl font-title font-bold text-center my-8">Deux type de livraisons</h2>
+                    <h2 className="text-3xl font-title font-bold text-center my-8">Retrait de votre commande en moins de 30 minutes</h2>
                     <p className="text-center">
-                        Bienvenue sur notre site ! Nous sommes ravis de vous offrir deux services pour répondre à vos besoins culinaires : la livraison en moins de 30 minutes pour ceux qui préfèrent se faire livrer à domicile, et le retrait à emporter en moins de 15 minutes pour ceux qui sont en déplacement. Nous nous engageons à vous offrir une expérience rapide et de qualité, que vous choisissiez de profiter de nos plats chez vous ou en chemin. Commandez maintenant et savourez la différence !
-
+                        Bienvenue sur notre site ! Nous sommes ravis de vous offrir un service de retrait de commande en moins de 30 minutes pour répondre à vos besoins culinaires. Que vous soyez en déplacement ou préfériez récupérer votre commande rapidement, nous nous engageons à vous offrir une expérience rapide et de qualité. Commandez maintenant et savourez la différence !
                     </p>
-
                 </div>
-                <div className="flex items-start justify-between ">
-                    <img src="/storage/home/livraison.png"  className="w-[23%] mr-4"/>
-                    <div>
-                        <h2 className="text-3xl font-title font-bold  my-8 w-[54%]">Livraison</h2>
-                        <p>Profitez de notre service de livraison rapide et efficace, conçu pour vous offrir une
-                            expérience culinaire sans stress. Nous nous engageons à livrer vos plats préférés
-                            directement chez vous en moins de 30 minutes. Que vous soyez à la maison, au bureau ou chez
-                            des amis, notre équipe de livraison garantit que vos repas arrivent chauds et prêts à être
-                            dégustés. Commandez en ligne et laissez-nous nous occuper du reste, pour que vous puissiez
-                            savourer des mets délicieux sans attendre.</p>
+                <div className=" mb-16 flex items-start justify-center ">
+                    {/*<img src="/storage/home/sac.jpg" className="w-[33%] mr-4" alt="Retrait" />*/}
+                    <div className="text-center">
+                        <h2 className="text-3xl font-title font-bold my-8">Comment Ca Marche ?</h2>
+                        <p className="">
+                            <ol className=" ">
+                                <li><strong>Choisissez vos plats :</strong> Parcourez notre menu en ligne et sélectionnez vos plats préférés.</li>
+                                <li><strong>Passez votre commande :</strong> Ajoutez les articles à votre panier et confirmez votre commande.</li>
+                                <li><strong>Récupérez en 30 minutes :</strong> Votre commande sera prête en moins de 30 minutes, prête à être retirée à notre point de retrait.</li>
+                            </ol>
+                        </p>
                     </div>
-
                 </div>
-                <div className="flex items-start justify-between">
-                    <img src="/storage/home/sac.jpg" className="w-[33%]" alt=""/>
-
-                    <div>
-                        <h2 className="text-3xl font-title font-bold  my-8">Retrait</h2>
-                        <p>Pour ceux qui sont toujours en mouvement, notre service de retrait est la solution idéale.
-                            Passez votre commande en ligne et récupérez-la en moins de 15 minutes dans notre
-                            établissement. Plus besoin d'attendre longtemps ou de perdre du temps, nous préparons votre
-                            repas avec soin et rapidité pour que vous puissiez continuer votre journée sans
-                            interruption. Idéal pour les pauses déjeuner rapides ou les soirées chargées, notre service
-                            de retrait est là pour simplifier votre quotidien.</p>
-                    </div>
+                <div className="mt-16 text-center">
+                    <h2 className="text-3xl font-title font-bold my-8">Pourquoi Choisir Notre Service de Retrait ?</h2>
+                    <p className="mx-auto w-[75%]">
+                        <ul className=" ">
+                            <li><strong>Rapidité :</strong> Votre commande prête en moins de 30 minutes.</li>
+                            <li><strong>Qualité :</strong> Des plats préparés avec des ingrédients frais et de qualité.</li>
+                            <li><strong>Commodité :</strong> Un processus de commande en ligne simple et rapide.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div className="flex justify-center mt-8">
+                <LinkBtn href="/menu">Voir le Menu et Commander</LinkBtn>
                 </div>
             </div>
         </AppLayout>

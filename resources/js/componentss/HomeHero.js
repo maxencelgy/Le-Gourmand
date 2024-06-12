@@ -20,10 +20,10 @@ const HomeHero = () => {
 
                                 <h3 className="text-[8rem] mb-6 mt-4 font-title">Burger</h3>
                             </div>
-                            <p className="mb-8 max-w-md ">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Ab
-                                asperiores atque commodi eum expedita iure nisi pariatur? Adipisci animi blanditiis
-                                commodi consequatur, debitis delectus dolore doloribus ea eaque eos </p>
+                            <p className="mb-8 max-w-md ">Un steak de bœuf juteux, du
+                                fromage fondant, de la laitue croquante, des tomates fraîches et une sauce irrésistible.
+                                Tout cela dans un pain aux graines de sésame grillé. Un vrai régal pour vos papilles
+                                ! </p>
                             <LinkBtn href="/menu">Commander</LinkBtn>
 
                         </div>

@@ -3,7 +3,7 @@ import AppLayout from "@/Layouts/AppLayout"
 import TeamItem from "./TeamItem"
 import people from "./people.json"
 const Team = (props) => {
-    
+
 
     return (
         <AppLayout>

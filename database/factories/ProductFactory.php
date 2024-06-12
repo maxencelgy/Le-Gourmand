@@ -30,7 +30,7 @@ class ProductFactory extends Factory
             "stars" => rand(4, 5),
             //"price_default" => $price_default,
             //"offer" => $offer,
-            "price" => rand(10, 200),
+            "price" => rand(10, 50),
 
             //'max_quantity' => rand(10, 30),
             'stock' => rand(1, 100),

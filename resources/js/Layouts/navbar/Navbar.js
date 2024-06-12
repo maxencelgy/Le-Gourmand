@@ -1,9 +1,9 @@
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon, ShoppingBagIcon } from "@heroicons/react/solid";
-import { Fragment, useState } from "react";
+import {Menu, Transition} from "@headlessui/react";
+import {ChevronDownIcon, ShoppingBagIcon} from "@heroicons/react/solid";
+import {Fragment, useEffect, useState} from "react";
 import Logo from "../Logo";
 import routes from "../routes";
-import { Link, usePage } from "@inertiajs/inertia-react";
+import {Link, usePage} from "@inertiajs/inertia-react";
 import ProfileDropdown from "./ProfileDropdown";
 
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
@@ -12,33 +12,44 @@ import LinkBtn from "@/Components/LinkBtn";
 
 //import ProfileDropdown from "./ProfileDropdown"
 const Navbar = () => {
-    const { auth } = usePage().props;
-    const [showingNavigationDropdown, setShowingNavigationDropdown] =
-        useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 0;
+            setScrolled(isScrolled);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+    const {auth} = usePage().props;
+    const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+
     return (
-        <nav className="container bg-white lg:bg-transparent py-2 lg:text-white lg:absolute inset-x-0  ">
-            <div className="h-16 lg:h-20 flex items-center justify-between lg:py-5">
+        <nav
+            className={` py-2 sticky top-0 z-[999] duration-150 mt-[-8rem] inset-x-0 ${scrolled ? 'bg-purple-600 text-white shadow-2xl   ' : 'bg-transparent text-gray-800'} lg:text-white`}>
+            <div className="container h-16 lg:h-20 flex items-center justify-between lg:py-5">
                 <div className="text-2xl">
                     <Link href="/">
-                        <Logo className="w-[70%]" />
+                        <Logo className="w-[70%]"/>
                     </Link>
                 </div>
 
                 {/* Desktop */}
                 <div className="hidden lg:flex items-center space-x-8  text-lg z-40 ">
                     <Link className="hover:text-yellow-500 duration-150" href={route("menu")}>{routes.menu.name}</Link>
-                    <Link className="hover:text-yellow-500 duration-150" href={route("service")}>{routes.service.name}</Link>
-
-
-
+                    <Link className="hover:text-yellow-500 duration-150"
+                          href={route("service")}>{routes.service.name}</Link>
 
 
                     {auth.user ? (
                         <>
                             <Link href={route("shopping-cart.index")}>
-                                <ShoppingBagIcon className="h-8 w-8" />
+                                <ShoppingBagIcon className="h-8 w-8"/>
                             </Link>
-                            <ProfileDropdown user={auth.user} />
+                            <ProfileDropdown user={auth.user}/>
                         </>
                     ) : (
                         <LinkBtn href={route("login")}>Connexion</LinkBtn>
@@ -119,7 +130,6 @@ const Navbar = () => {
                     </ResponsiveNavLink>
 
 
-
                 </div>
                 {auth.user && (
                     <div className="border-t border-gray-200 pt-4 pb-1 ">
@@ -151,12 +161,12 @@ const Navbar = () => {
     );
 };
 
-const MenuHeader = ({ title, data }) => {
+const MenuHeader = ({title, data}) => {
     return (
         <Menu as="div" className="relative inline-block text-left">
             <Menu.Button className="flex items-center ">
                 <span className=" ">{title}</span>
-                <ChevronDownIcon className="h-5 w-5" />
+                <ChevronDownIcon className="h-5 w-5"/>
             </Menu.Button>
             <Transition
                 as={Fragment}
@@ -167,7 +177,8 @@ const MenuHeader = ({ title, data }) => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="absolute right-0 w-60 mt-2 origin-top-right bg-yellow-500 divide-y divide-yellow-600 divide-opacity-30  shadow-lg focus:outline-none text-white uppercase font-bold text-sm tracking-wide rounded font-sans">
+                <Menu.Items
+                    className="absolute right-0 w-60 mt-2 origin-top-right bg-yellow-500 divide-y divide-yellow-600 divide-opacity-30  shadow-lg focus:outline-none text-white uppercase font-bold text-sm tracking-wide rounded font-sans">
                     {data.map((item, key) => (
                         <Menu.Item key={key}>
                             <Link

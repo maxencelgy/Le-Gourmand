@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::truncate();
-        $categories_menu = ["Hamburguesas", "Ensaladas", "Pizza", "Bebidas"];
+        $categories_menu = ["Boeuf", "Poulet", "Poisson", "Spicy", "Veggie"];
         foreach ($categories_menu as $key => $category) {
             Category::create([
                 "name" => $category,
@@ -28,7 +28,7 @@ class CategorySeeder extends Seeder
                 "active" => 1
             ]);
         }
-        
+
         Category::create([
             "name" => "Gift Card",
             "slug" =>  "gift_cards",
