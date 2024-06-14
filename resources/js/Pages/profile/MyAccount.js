@@ -10,17 +10,17 @@ const profileRoutes = [
         active: "dashboard",
     },
     {
-        name: "Ordenes",
+        name: "Commandes",
         path: route("orders"),
         active: "orders",
     },
     {
-        name: "Detalles de cuenta",
+        name: "Détails du compte",
         path: route("account_details"),
         active: "account-details",
     },
     {
-        name: "Cambiar contraseña",
+        name: "Changer le mot de passe",
         path: route("change_password"),
         active: "password",
     },
@@ -40,7 +40,7 @@ const MyAccount = ({ children, active, title }) => {
                 <div className="grid grid-cols-12 md:gap-4 gap-y-10">
                     <div className="col-span-12 md:col-span-3">
                         <h3 className="text-3xl text-yellow-500 font-primary ">
-                            My cuenta
+                            Mon compte
                         </h3>
                         <div className="flex flex-col mt-6">
                             {profileRoutes.map((route, index) => (
@@ -66,7 +66,7 @@ const MyAccount = ({ children, active, title }) => {
                                 type="Button"
                                 disabled={logout.processing}
                             >
-                                Cerrar Sesion
+                                Déconexion
                             </button>
                         </div>
                     </div>

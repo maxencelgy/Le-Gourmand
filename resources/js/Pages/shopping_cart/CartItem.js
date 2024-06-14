@@ -12,7 +12,7 @@ const CartItem = ({ product }) => {
 
     const handleChangeQuantity = (newQuantity) => {
         addProductToCart.setData("quantity", newQuantity);
-        
+
     };
     const handleClickRemoveItem = () => {
         removeProductToCart.delete(
@@ -46,14 +46,14 @@ const CartItem = ({ product }) => {
                     <img
                         src={"/storage/" + product.img}
                         alt={"img" + product.img}
-                        className=" max-h-20 mx-auto"
+                        className=" max-h-20 mx-auto rounded"
                     />
                 </div>
 
                 <div className="col-span-8 lg:col-span-6 ">
                     <div className="my-auto">
                         <Link href={route("product", { slug: product.slug })}>
-                            <h5 className="font-primary text-2xl">
+                            <h5 className="text-black text-2xl">
                                 {product.name}
                             </h5>
                         </Link>
@@ -98,11 +98,11 @@ const CartItem = ({ product }) => {
                                 removeProductToCart.errors.message}
                         </div>
                         <button
-                            className="text-sm text-blue-500 mt-2 font-medium text-right "
+                            className="text-sm text-yellow-500 mt-2 font-medium text-right "
                             onClick={handleClickRemoveItem}
                             disabled={removeProductToCart.processing}
                         >
-                            Remover
+                            Retirer
                         </button>
                     </div>
                 </div>

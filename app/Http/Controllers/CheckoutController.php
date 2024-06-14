@@ -57,24 +57,27 @@ class CheckoutController extends Controller
         //dd($total_price['tax_percent']);
         $order->tax_percent = $total_price['tax_percent'];
         $order->tax_amount = $total_price['tax_amount'];
-        $order->shipping = $total_price['shipping'];
         $order->sub_total = $total_price['sub_total'];
         $order->total = $total_price['total'];
         $order->order = rand(1000, 9999) . date('md') . $user->id;
 
         try {
 
-            $description_stripe = $user->name . " - " . $user->shopping_cart->count() . " plato(s)";
+            $description_stripe = $user->name . " - " . $user->shopping_cart->count() . " menu(s) burger";
             if (env('APP_ENV') != "testing") {
                 $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
                 $payment = $stripe->paymentIntents->create([
                     'amount' => $order->total * 100,
-                    'currency' => 'usd',
+                    'currency' => 'eur',
                     'description' => $description_stripe,
                     'payment_method' => $request->paymentMethod,
                     'confirmation_method' => 'manual',
-                    'confirm' => true,
+                    'confirm' => false, // Do not confirm the payment at this point
                 ]);
+                $confirmedPayment = $stripe->paymentIntents->confirm(
+                    $payment->id,
+                    ['return_url' => env('APP_URL') . '/order/' . $order->order . '/success']
+                );
                 $order->stripe_id = $payment->id;
             } else {
                 $order->stripe_id = Str::random();
@@ -88,12 +91,13 @@ class CheckoutController extends Controller
 
             DB::rollBack();
 
-            $error = 'Al parecer hubo un error! El pago a través de su targeta no se pudo realizar.';
+            dd($e->getMessage());
+            $error = 'Apparemment il y a eu une erreur ! Le paiement via votre carte n\'a pas pu être effectué. ';
             return response()->json(['error' => $error], 500);
         }
         return Redirect::route('order_details', [$order->order])->with(
             'success',
-            'Orden completada con exito'
+            'Votre commande a bien été enregistrée ! Vous allez recevoir un email de confirmation. Merci !'
         );
     }
 }

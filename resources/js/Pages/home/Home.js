@@ -33,23 +33,21 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-            {/*<Frites/>*/}
-            <div className="bg-purple-500">
+            <Frites/>
+            <div className="bg-purple-500" >
 
                 <TitleSection title="Notre equipe"/>
-                <div className="container pb-16 ">
+                <div className="container pb-16" >
                     <div
-                        className="text-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 ">
-                        {people.map((person) => (
+                        className="text-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-6 ">
+                        {people.slice(0, 5).map((person) => (
                             <TeamItem person={person}/>
                         ))}
-
                     </div>
                 </div>
 
             </div>
             <Services/>
-
 
 
         </AppLayout>

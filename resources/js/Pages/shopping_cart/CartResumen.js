@@ -23,7 +23,7 @@ const CartResumen = ({ meta }) => {
             preserveScroll: true,
         });
     };
-    
+
     return (
         <div>
             <div className=" p-12 rounded-md bg-gray-100 text-left relative">
@@ -34,16 +34,13 @@ const CartResumen = ({ meta }) => {
                     </div>
                 )}
 
-                <h5 className="text-3xl font-primary"> Pedidos</h5>
+                <h5 className="text-3xl text-black"> Demandes</h5>
                 <div className="mt-5 divide-y divide-gray-200 font-medium ">
-                    <div className="flex justify-between py-4  leading-none">
-                        <div>Subtotal</div>
+                    <div className=" flex justify-between py-4  leading-none">
+                        <div>Sous-total</div>
                         <div>{formatCurrency(meta.sub_total)}</div>
                     </div>
-                    <div className="flex justify-between py-4  leading-none">
-                        <div>Shipping</div>
-                        <div>{formatCurrency(meta.shipping)}</div>
-                    </div>
+
                     <div className="flex justify-between py-4  leading-none">
                         <div>Tax ({meta.tax_percent} %)</div>
                         <div>{formatCurrency(meta.tax_amount)}</div>
@@ -60,17 +57,17 @@ const CartResumen = ({ meta }) => {
                                 >
                                     <XIcon className="h-5 w-5 text-gray-400" />
                                 </button>
-                                <div className="ml-2">Descuento</div>
+                                <div className="ml-2">Rabais</div>
                             </div>
                             <div>-{formatCurrency(meta.discount.applied)}</div>
                         </div>
                     )}
-                    <div className="flex justify-between pt-5 text-xl font-bold ">
+                    <div className="flex justify-between pt-5 text-xl font-bold text-black ">
                         <div>Total</div>
                         <div>{formatCurrency(meta.total)}</div>
                     </div>
                 </div>
-                
+
             </div>
             <form onSubmit={handleSubmitDiscount} className="flex mt-5">
                 <input
@@ -85,8 +82,8 @@ const CartResumen = ({ meta }) => {
                     className="btn px-5 py-3 bg-yellow-500 text-white ml-3 disabled:opacity-50 "
                 >
                     {applyDiscount.processing
-                        ? "Cargando...."
-                        : "Aplicar Cupon"}
+                        ? "Mise en charge...."
+                        : "Appliquer Coupon"}
                 </button>
             </form>
             <span className="text-sm text-red-500">

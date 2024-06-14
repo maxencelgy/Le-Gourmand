@@ -23,12 +23,12 @@ const AccountDetails = (props) => {
         setData(event.target.name, event.target.value);
     };
     return (
-        <MyAccount active="account-details" title="Detalles de Cuenta">
+        <MyAccount active="account-details" title="Détail du compte">
             <ValidationErrors errors={errors} />
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                     <div>
-                        <Label forInput="email" value="Nombre y Apellido *" />
+                        <Label forInput="name" value="Nom et prénom *" />
                         <Input
                             className="w-full mt-1"
                             required={true}
@@ -38,7 +38,7 @@ const AccountDetails = (props) => {
                         />
                     </div>
                     <div>
-                        <Label forInput="email" value="Telefono *" />
+                        <Label forInput="phone" value="Téléphone *" />
                         <Input
                             className="w-full mt-1"
                             required={true}
@@ -60,7 +60,7 @@ const AccountDetails = (props) => {
                     </div>
 
                     <div>
-                        <Label forInput="email" value="Confirmar Email *" />
+                        <Label forInput="email_confirmation" value="Confirmer Email *" />
                         <Input
                             className="w-full mt-1"
                             required={true}
@@ -71,7 +71,7 @@ const AccountDetails = (props) => {
                         />
                     </div>
                     <div>
-                        <Label forInput="email" value="Ciudad *" />
+                        <Label forInput="city" value="Ville *" />
                         <Input
                             className="w-full mt-1"
                             required={true}
@@ -81,7 +81,7 @@ const AccountDetails = (props) => {
                         />
                     </div>
                     <div className="md:col-span-2">
-                        <Label forInput="email" value="Direccion *" />
+                        <Label forInput="address" value="Addresse *" />
                         <Input
                             className="w-full mt-1"
                             required={true}
@@ -91,7 +91,9 @@ const AccountDetails = (props) => {
                         />
                     </div>
                 </div>
-                <Button processing={processing}>Guardar</Button>
+                <Button processing={processing}>
+                    Enregistrer
+                </Button>
             </form>
         </MyAccount>
     );

@@ -74,8 +74,7 @@ class User extends Authenticatable
     public function getShoppingCartTotalAttribute()
     {
         $sub_total = $this->shopping_cart->sum('pivot.total_price_quantity');
-        $shipping = 11;
-        $tax_percent = 12;
+        $tax_percent = 20;
         $total = $sub_total;
         $tax_amount = $sub_total * ($tax_percent / 100);
         $discount_availables = DiscountCode::get()->random(5);
@@ -93,12 +92,11 @@ class User extends Authenticatable
             $total = ($total < 0) ? 0 : $total; //num positivos
         }
 
-        $total += $tax_amount + $shipping;
+        $total += $tax_amount;
 
         return [
             'tax_percent' => $tax_percent,
             'tax_amount' => round($tax_amount, 2),
-            'shipping' => $shipping,
             'sub_total' => round($sub_total, 2),
             'total' => round($total, 2),
             'discount' => $discount,

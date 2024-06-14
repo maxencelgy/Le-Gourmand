@@ -53,7 +53,7 @@ const Form = ({ onsubmit }) => {
         if (!nameCreditCard.current.value) {
             setErrorStripe({
                 nameCreditCard:
-                    "El nombre del titular de la targeta de credito es requerido",
+                    "Le nom du titulaire de la carte de crédit est requis",
             });
         }
 
@@ -72,7 +72,7 @@ const Form = ({ onsubmit }) => {
                 setErrorStripe({ stripe: error.message });
             } else {
                 setErrorStripe({
-                    stripe: "Al parecer hubo un error! El pago a través de su targeta no se pudo realizar.",
+                    stripe: "Apparemment il y a eu une erreur ! Le paiement via votre carte n'a pas pu être effectué.\n",
                 });
             }
         } else {
@@ -104,7 +104,7 @@ const Form = ({ onsubmit }) => {
             post("/checkout", { preserveScroll: true });
         }
     }, [data.paymentMethod]);
-    
+
     useEffect(() => {
         setLoading(processing);
     }, [processing]);
@@ -119,7 +119,7 @@ const Form = ({ onsubmit }) => {
             </div>
 
             <div>
-                <Label forInput="name" value="Nombre" />
+                <Label forInput="name" value="Nom" />
                 <input
                     className="mt-1 w-full"
                     type="text"
@@ -140,7 +140,7 @@ const Form = ({ onsubmit }) => {
             </div>
 
             <div className="md:col-span-2">
-                <Label forInput="address" value="Direccion" />
+                <Label forInput="address" value="Adresse" />
 
                 <Input
                     className="mt-1 w-full"
@@ -153,7 +153,7 @@ const Form = ({ onsubmit }) => {
             </div>
 
             <div>
-                <Label forInput="phone" value="Telefono" />
+                <Label forInput="phone" value="Téléphone" />
 
                 <Input
                     className="mt-1"
@@ -166,7 +166,7 @@ const Form = ({ onsubmit }) => {
             </div>
 
             <div className="md:col-span-2">
-                <Label forInput="note" value="Nota" />
+                <Label forInput="note" value="Note" />
 
                 <textarea
                     name="note"
@@ -180,7 +180,7 @@ const Form = ({ onsubmit }) => {
             <div>
                 <Label
                     forInput="nameCreditCard"
-                    value="Titular de la Targeta de credito"
+                    value="Titulaire de la carte de crédit"
                 />
                 <input
                     className="w-full mt-1"
@@ -199,7 +199,7 @@ const Form = ({ onsubmit }) => {
             </div>
 
             <div className="md:col-span-2">
-                <Label forInput="note" value="Targeta de credito" />
+                <Label forInput="note" value="Carte de crédit" />
                 <div className="content_stripe py-3 mt-1">
                     <CardElement options={options} />
                 </div>
@@ -215,7 +215,7 @@ const Form = ({ onsubmit }) => {
                 <Button processing={loading}>
                     <div className="flex items-center">
                         <CashIcon className="h-5 w-5 mr-2" />
-                        <span>Proceder a pago</span>
+                        <span>Procéder au paiement</span>
                     </div>
                 </Button>
             </div>

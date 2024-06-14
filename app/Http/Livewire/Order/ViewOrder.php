@@ -32,8 +32,8 @@ class ViewOrder extends Component
         $order->save();
 
         $this->dispatchBrowserEvent('notification', [
-            'title' => "Orden Cancelada",
-            'subtitle' => "La Orden  <b>" . $this->order->order . "</b>  a sido  cancelada correctamente"
+            'title' => "Commande annulée",
+            'subtitle' => "L'Ordre<b>". $this->order->order . "</b>a été annulé avec succès"
         ]);
         $this->emit('resetListOrder');
         $this->open_modal_confirmation = false;

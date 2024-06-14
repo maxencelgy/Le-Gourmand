@@ -51,7 +51,7 @@ export default function Login({ status, canResetPassword }) {
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="Correo electronico" />
+                    <Label forInput="email" value="Adresse mail" />
 
                     <Input
                         type="text"
@@ -65,7 +65,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Contraseña" />
+                    <Label forInput="password" value="Mot de passe" />
 
                     <Input
                         type="password"
@@ -86,24 +86,24 @@ export default function Login({ status, canResetPassword }) {
                         />
 
                         <span className="ml-2 text-sm text-gray-600">
-                            Recordar
+                            Se souvenir de moi
                         </span>
                     </label>
 
                     <p className="text-sm">
-                        <span>¿No tienes cuenta? </span>
+                        <span> Pas de compte ? </span>
                         <Link
                             className="font-bold text-yellow-500 hover:text-yellow-400"
                             href="/register"
                         >
-                            Registrarte
+                            S'inscrire
                         </Link>
                     </p>
                 </div>
                 <div className="text-left text-sm mt-4 font-medium text-gray-300">
                     <span className="block">admin: user@user.com</span>
-                    <span className="block">invitado: user@user2.com</span>
-                    <span className="block">contraseña : password</span>
+                    <span className="block">invité: user@user2.com</span>
+                    <span className="block">mot de passe : password</span>
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
@@ -112,12 +112,12 @@ export default function Login({ status, canResetPassword }) {
                             href={route("password.request")}
                             className="underline text-sm text-gray-600 hover:text-gray-900"
                         >
-                            Olvidaste tu contraseña?
+                            Mot de passe oublié ?
                         </Link>
                     )}
 
                     <Button className="ml-4" processing={processing}>
-                        Iniciar Sesion
+                        Se connecter
                     </Button>
                 </div>
             </form>

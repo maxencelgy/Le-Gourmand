@@ -46,7 +46,7 @@ export default function Register() {
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="name" value="Name" />
+                    <Label forInput="name" value="Surnom" />
                     <Input
                         type="text"
                         name="name"
@@ -73,7 +73,7 @@ export default function Register() {
                     />
                 </div>
                 <div className="mt-4">
-                    <Label forInput="address" value="Direccion" />
+                    <Label forInput="address" value="Addresse" />
 
                     <Input
                         type="text"
@@ -86,7 +86,7 @@ export default function Register() {
                     />
                 </div>
                 <div className="mt-4">
-                    <Label forInput="phone" value="Telefono" />
+                    <Label forInput="phone" value="Téléphone" />
 
                     <Input
                         type="text"
@@ -99,7 +99,7 @@ export default function Register() {
                     />
                 </div>
                 <div className="mt-4">
-                    <Label forInput="city" value="Ciudad" />
+                    <Label forInput="city" value="Ville" />
 
                     <Input
                         type="text"
@@ -113,7 +113,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                    <Label forInput="password" value="Mot de passe" />
 
                     <Input
                         type="password"
@@ -129,7 +129,7 @@ export default function Register() {
                 <div className="mt-4">
                     <Label
                         forInput="password_confirmation"
-                        value="Confirm Password"
+                        value="Confirmation du mot de passe"
                     />
 
                     <Input
@@ -147,11 +147,11 @@ export default function Register() {
                         href={route("login")}
                         className="underline text-sm text-gray-600 hover:text-gray-900"
                     >
-                        Already registered?
+                        Vous avez déjà un compte ?
                     </Link>
 
                     <Button className="ml-4" processing={processing}>
-                        Register
+                        S'inscrire
                     </Button>
                 </div>
             </form>

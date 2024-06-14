@@ -23,6 +23,7 @@ const Frites = () => {
                     </div>
                 </div>
             </div>
+            <div id="equipe"></div>
         </div>
     );
 };

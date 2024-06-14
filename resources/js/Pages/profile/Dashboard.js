@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/inertia-react";
+import {Link} from "@inertiajs/inertia-react";
 
 import MyAccount from "./MyAccount";
 
@@ -6,21 +6,20 @@ const Dashboard = () => {
     return (
         <MyAccount active="dashboard" title="Dashboard">
             <div>
-                Desde el panel de control de su cuenta, puede ver sus ,
-                administrar los
+                Depuis le tableau de bord de votre compte, vous pouvez consulter vos
                 <Link href="/" className="font-bold underline px-1 ">
-                    pedidos recientes
+                    Dernières commandes
                 </Link>
-                , administrar los
+                , gérer le
                 <Link
                     href={route("account_details")}
                     className="font-bold underline px-1 "
                 >
-                    detalles de su cuenta
+                    détails de vos factures
                 </Link>
-                y
+                et
                 <Link href="/" className="font-bold underline px-1 ">
-                    cambiar su contraseña.
+                    changez votre mot de passe.
                 </Link>
                 .
             </div>

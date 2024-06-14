@@ -29,7 +29,7 @@ class ShoppingCartController extends Controller
         ]);
     }
 
-    // 
+    //
     /**
      * Store a newly created resource in storage.
      *
@@ -59,9 +59,9 @@ class ShoppingCartController extends Controller
                 ->withErrors(['stock' => 'No hay stock disponible']);
         }
 
-        /*El método updateOrInsert intentará localizar un registro de base de datos coincidente utilizando los 
-        pares de valores y columnas del primer argumento. Si el registro existe, se actualizará con los valores 
-        del segundo argumento. Si no se puede encontrar el registro, se insertará un nuevo registro con los 
+        /*El método updateOrInsert intentará localizar un registro de base de datos coincidente utilizando los
+        pares de valores y columnas del primer argumento. Si el registro existe, se actualizará con los valores
+        del segundo argumento. Si no se puede encontrar el registro, se insertará un nuevo registro con los
         atributos combinados de ambos argumentos:*/
         DB::table('shopping_cart')->updateOrInsert([
             'user_id' => $user->id,
@@ -109,7 +109,7 @@ class ShoppingCartController extends Controller
 
         if (!$discount) { //esta vacio
             return Redirect::route('shopping-cart.index')->withErrors([
-                'code' => 'El codigo de descuento no esta disponible'
+                'code' => 'Le coupon n\'existe pas ou n\'est pas actif.'
             ]);
         }
 

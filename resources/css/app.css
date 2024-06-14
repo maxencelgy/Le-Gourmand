@@ -14,16 +14,19 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Poppins';
     src: url('fonts/Poppins-Medium.ttf'),
     url('fonts/Poppins-Medium.ttf');
 }
+
 @font-face {
     font-family: 'PoppinsBold';
     src: url('fonts/Poppins-ExtraBold.ttf'),
     url('fonts/Poppins-ExtraBold.ttf');
 }
+
 @font-face {
     font-family: 'PoppinsLight';
     src: url('fonts/Poppins-Light.ttf'),
@@ -37,9 +40,15 @@
     url('fonts/MontegoBay.ttf');
 }
 
-body {
-    @apply  text-gray-700;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    @apply text-gray-700;
+
+}
+
 .font-primary {
     @apply uppercase;
 }
@@ -54,20 +63,25 @@ body {
     .py-content {
         @apply py-8;
     }
+
     .pb-content {
         @apply pb-8;
     }
+
     .pt-content {
         @apply pt-8;
     }
+
     /* //md */
     @media (min-width: 768px) {
         .py-content {
             @apply py-10;
         }
+
         .pb-content {
             @apply pb-10;
         }
+
         .pt-content {
             @apply pt-10;
         }
@@ -78,9 +92,11 @@ body {
         .py-content {
             @apply py-12;
         }
+
         .pb-content {
             @apply pb-12;
         }
+
         .pt-content {
             @apply pt-12;
         }
@@ -90,9 +106,11 @@ body {
         .py-content {
             @apply py-14;
         }
+
         .pb-content {
             @apply pb-14;
         }
+
         .pt-content {
             @apply pt-14;
         }
@@ -102,11 +120,13 @@ body {
 .title-section {
     @apply font-primary text-[2.5rem] uppercase leading-tight;
 }
+
 @media (min-width: 1024px) {
     .title-section {
         @apply text-5xl;
     }
 }
+
 @media (min-width: 1280px) {
     .title-section {
         @apply text-6xl;
@@ -116,9 +136,11 @@ body {
 .galleries-image-hover:hover > img {
     @apply transition duration-500 transform scale-110 brightness-50;
 }
+
 .galleries-image-hover:hover > div {
     @apply transition duration-500 transform opacity-100 -translate-y-full;
 }
+
 .terms p {
     @apply font-light mt-4;
 }
@@ -126,9 +148,11 @@ body {
 .terms h5 {
     @apply font-primary uppercase text-3xl;
 }
+
 .terms a {
     @apply text-yellow-600 font-medium;
 }
+
 .terms ul {
     @apply list-outside list-disc pl-4;
 }
@@ -136,15 +160,19 @@ body {
 .btn {
     @apply uppercase inline-block font-primary text-white rounded leading-none;
 }
+
 .btn-sm {
     @apply py-3 px-8 text-base leading-none;
 }
+
 .btn-red {
     @apply bg-red-500 text-white;
 }
+
 .btn-lg {
     @apply text-xl py-4 px-9 leading-none;
 }
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -161,9 +189,11 @@ nav .nav-link-item {
 .badge {
     @apply text-xl rounded  leading-none;
 }
+
 .badge-sm {
     @apply py-[5px] px-[10px];
 }
+
 .badge-md {
     @apply py-2 px-3;
 }
@@ -174,6 +204,6 @@ nav .nav-link-item {
     }
 }
 
-#nprogress .bar{
+#nprogress .bar {
     height: 4px !important;
 }

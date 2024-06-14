@@ -7,19 +7,19 @@ import MyAccount from "./MyAccount";
 const Orders = (props) => {
     console.log(props.orders);
     return (
-        <MyAccount active="orders" title="Ordenes">
+        <MyAccount active="orders" title="Commandes">
             <table className="w-full rounded-lg overflow-hidden">
                 <thead>
                     <tr>
                         <th className="p-4 bg-gray-100 text-heading font-medium text-left">
-                            Orders
+                            Commande
                         </th>
 
                         <th className="p-4 bg-gray-100 text-heading font-medium text-left">
-                            Fecha
+                            Date
                         </th>
                         <th className="p-4 bg-gray-100 text-heading font-medium text-left">
-                            Estado
+                            État
                         </th>
                         <th className="p-4 bg-gray-100 text-heading font-medium text-left">
                             Total
@@ -45,17 +45,17 @@ const Orders = (props) => {
                             <td className="px-4 py-5 text-left ">
                                 {order.state == "successful" && (
                                     <span className="px-2 py-1 inline-flex leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                        Completado
+                                        Réussi
                                     </span>
                                 )}
                                 {order.state == "refunded" && (
                                     <span className="px-2 py-1 inline-flex leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
-                                        Rembolsado
+                                        Remboursé
                                     </span>
                                 )}
                                 {order.state == "CELED" && (
                                     <span className="px-2 py-1 inline-flex leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
-                                        Rembolsado
+                                        Annulé
                                     </span>
                                 )}
                             </td>

@@ -19,7 +19,6 @@ class Order extends Model
         'discount',
         'tax',
         'tax_amount',
-        'shipping',
         'total',
         'state',
         'stripe_id',
@@ -33,7 +32,6 @@ class Order extends Model
         'sub_total' => 'float',
         'tax_percent' => 'float',
         'tax_amount' => 'float',
-        'shipping' => 'float',
         'total' => 'float',
     ];
     protected $attributes = [

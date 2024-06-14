@@ -37,7 +37,7 @@ const ProfileDropdown = ({ user }) => {
                     <div>
                         <Menu.Item>
                             <Link href={route('my_account')} className="px-3 py-3 block ">
-                                <span>Mi cuenta</span>
+                                <span>Mon compte</span>
                             </Link>
                         </Menu.Item>
                     </div>
@@ -47,7 +47,7 @@ const ProfileDropdown = ({ user }) => {
                                 onClick={handleLogout}
                                 className="px-3 py-3 block  cursor-pointer"
                             >
-                                Salir
+                                <span>Déconnexion</span>
                             </div>
                         </Menu.Item>
                     </div>

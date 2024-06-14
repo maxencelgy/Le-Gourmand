@@ -30,14 +30,14 @@ const ChangePassword = () => {
     //     return () => {};
     // }, []);
     return (
-        <MyAccount active="password" title="Cambiar contraseña">
+        <MyAccount active="password" title="Changer le mot de passe">
             <ValidationErrors errors={errors} />
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2  gap-6 mb-4">
                     <div>
                         <Label
                             forInput="current_password"
-                            value="Contraseña Actual *"
+                            value="Mot de passe actuel *"
                         />
                         <Input
                             className="w-full mt-1"
@@ -50,7 +50,7 @@ const ChangePassword = () => {
                     </div>
 
                     <div>
-                        <Label forInput="password" value="Contraseña nueva *" />
+                        <Label forInput="password" value="Nouveau mot de passe *" />
                         <Input
                             className="w-full mt-1"
                             required={true}
@@ -63,7 +63,7 @@ const ChangePassword = () => {
                     <div>
                         <Label
                             forInput="password_confirmation"
-                            value="Confirmar contraseña nueva *"
+                            value="Confirmer le nouveau mot de passe *"
                         />
                         <Input
                             className="w-full mt-1"
@@ -75,7 +75,9 @@ const ChangePassword = () => {
                         />
                     </div>
                 </div>
-                <Button processing={processing}>Guardar</Button>
+                <Button processing={processing}>
+                    Changer le mot de passe
+                </Button>
             </form>
         </MyAccount>
     );

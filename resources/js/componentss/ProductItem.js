@@ -33,7 +33,7 @@ const ProductItem = ({product}) => {
                             d="M1.64795 1.64795H4.23128L7.66712 17.6904C7.79315 18.278 8.12006 18.8032 8.59158 19.1757C9.06309 19.5482 9.6497 19.7446 10.2504 19.7313H22.8829C23.4709 19.7303 24.0409 19.5289 24.4989 19.1602C24.9568 18.7914 25.2753 18.2776 25.4017 17.7034L27.5329 8.10628H5.61337"
                             stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <div className="font-extrabold ml-4 text-sm leading-none">Ajouter au panier</div>
+                    <div className="font-primaryBold ml-4 text-md leading-none">Ajouter au panier</div>
                 </div>
             </div>
         </Link>
