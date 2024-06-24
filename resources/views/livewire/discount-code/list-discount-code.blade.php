@@ -6,7 +6,7 @@
     </x-slot>
     <div>
 
-        <x-list-data text-button='Agregar Codigo de descuento' :data="$data" :fields="$fields">
+        <x-list-data text-button='Ajouter un code promo' :data="$data" :fields="$fields">
             <x-slot name="table_data">
                 @foreach ($data as $item)
                     <tr>
@@ -67,8 +67,8 @@
 
         @livewire('discount-code.create-discount-code')
 
-        
-        
+
+
     </div>
 
 </div>

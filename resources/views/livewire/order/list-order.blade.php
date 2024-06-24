@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-bold text-xl text-gray-800 leading-tight">
-            {{ __('Ordenes') }}
+            {{ __('Commandes') }}
         </h2>
     </x-slot>
     <div>

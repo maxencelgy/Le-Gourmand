@@ -19,7 +19,7 @@ class ListDiscountCode extends Component
 
     public function render()
     {
-        $fields = ['Nombre - Descripcion',  'Codigo', 'Tipo - Valor', ' Ultimo acceso', 'Activo'];
+        $fields = ['Nom - Description',  'Code', 'Type - Valeur', 'Dernier accès', 'Actions'];
 
         $data = DiscountCode::where('name', 'like', '%' . $this->search . '%')
             ->orderBy($this->sortBy, $this->sortDirection)

@@ -4089,6 +4089,10 @@ var Navbar = function Navbar() {
           className: "hover:text-yellow-500 duration-150",
           href: route("service"),
           children: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].service.name
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          href: "/#ou",
+          className: "hover:text-yellow-500 duration-150",
+          children: "Localisation"
         }), auth.user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
             href: route("shopping-cart.index"),
@@ -4165,6 +4169,9 @@ var Navbar = function Navbar() {
           href: route("menu"),
           active: route().current("menu"),
           children: _routes__WEBPACK_IMPORTED_MODULE_2__["default"].menu.name
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          href: "/#ou",
+          children: "Localisation"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
           href: route("service"),
           active: route().current("service"),
@@ -6891,10 +6898,13 @@ var Frites = function Frites() {
       className: "wrap",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "flex items-top justify-between gap-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          className: "rounded-lg w-[43%]",
-          src: "/storage/home/frites.jpeg",
-          alt: ""
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "overflow-hidden w-[43%] rounded-lg",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            className: "  object-cover  transition duration-500 transform hover:scale-110 hover:brightness-75  ",
+            src: "/storage/home/frites.jpeg",
+            alt: ""
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "w-[51%] text-white",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
@@ -6937,7 +6947,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pages_team_Team__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Pages/team/Team */ "./resources/js/Pages/team/Team.js");
 /* harmony import */ var _Pages_team_people_json__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Pages/team/people.json */ "./resources/js/Pages/team/people.json");
 /* harmony import */ var _Pages_team_TeamItem__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/Pages/team/TeamItem */ "./resources/js/Pages/team/TeamItem.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Pages_home_Where__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @/Pages/home/Where */ "./resources/js/Pages/home/Where.js");
+/* harmony import */ var _Pages_location_CardLocation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/Pages/location/CardLocation */ "./resources/js/Pages/location/CardLocation.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -6951,46 +6965,58 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Home = function Home(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "D\xE9but",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_componentss_HomeHero__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_componentss_HomeHero__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
       className: "container ",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "mb-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
           title: "Nos burgers"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "mb-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-4 lg:mt-4",
           children: props.products_featured.data.map(function (product) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_componentss_ProductItem__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_componentss_ProductItem__WEBPACK_IMPORTED_MODULE_0__["default"], {
               product: product
             }, product.id);
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "flex py-16 items-center justify-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_LinkBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Components_LinkBtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
             className: " mx-auto",
             href: "/menu",
             children: "Voir tout nos burgers"
           })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Pages_home_Frites__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
       className: "bg-purple-500",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         title: "Notre equipe"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
         className: "container pb-16",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "text-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-6 ",
           children: _Pages_team_people_json__WEBPACK_IMPORTED_MODULE_9__.slice(0, 5).map(function (person) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Pages_team_TeamItem__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Pages_team_TeamItem__WEBPACK_IMPORTED_MODULE_10__["default"], {
               person: person
             });
           })
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+        id: "equipe"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Pages_home_Services__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Pages_home_Services__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+      className: " pt-4 pb-20",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Pages_location_CardLocation__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        title: "ROUEN",
+        className: "w-full",
+        address: "7 rue de l'avalasse 76000, Rouen",
+        img: "/storage/home/burger-alleno.jpg"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
+      id: "ou"
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
@@ -7187,6 +7213,37 @@ var Services = function Services() {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/home/Where.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/home/Where.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Components_LinkBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/LinkBtn */ "./resources/js/Components/LinkBtn.js");
+/* harmony import */ var _Components_TitleSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/TitleSection */ "./resources/js/Components/TitleSection.js");
+/* harmony import */ var _Pages_location_CardLocation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Pages/location/CardLocation */ "./resources/js/Pages/location/CardLocation.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Where = function Where() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: " pt-4 pb-20",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: ""
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Where);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/location/CardLocation.js":
 /*!*****************************************************!*\
   !*** ./resources/js/Pages/location/CardLocation.js ***!
@@ -7203,10 +7260,11 @@ __webpack_require__.r(__webpack_exports__);
 var CardLocation = function CardLocation(_ref) {
   var title = _ref.title,
     _ref$phone = _ref.phone,
-    phone = _ref$phone === void 0 ? "879-123-444" : _ref$phone,
+    phone = _ref$phone === void 0 ? "0232560606" : _ref$phone,
     address = _ref.address,
     img = _ref.img;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "w-full",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "overflow-hidden",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
@@ -7217,17 +7275,17 @@ var CardLocation = function CardLocation(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "py-9 px-5 text-center space-y-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h5", {
-        className: " font-primary text-red-500 text-3xl ",
+        className: " font-title text-red-500 text-5xl ",
         children: title
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h6", {
-        className: "font-primary text-2xl",
-        children: ["Telefono: ", phone]
+        className: " text-2xl",
+        children: ["T\xE9l\xE9phone: ", phone]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h6", {
+        className: " text-2xl",
+        children: ["Adresse : ", address, " "]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h6", {
-        className: "font-primary text-2xl",
-        children: "Direccion"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-        className: "text-lg",
-        children: address
+        className: " text-2xl",
+        children: "Ouvert : 7j/7 "
       })]
     })]
   });
@@ -9578,10 +9636,13 @@ __webpack_require__.r(__webpack_exports__);
 var TeamItem = function TeamItem(_ref) {
   var person = _ref.person;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-      src: person.img,
-      className: "md:h-72 w-full object-cover object-top rounded-md",
-      alt: person.img
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "overflow-hidden rounded-md",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+        src: person.img,
+        className: "transition duration-500 transform hover:scale-110 hover:brightness-75   md:h-72 w-full object-cover object-top rounded-md",
+        alt: person.img
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "mt-4 lg::mt-8 text-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h5", {
@@ -10024,7 +10085,7 @@ var ProductItem = function ProductItem(_ref) {
       slug: product.slug
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "max-w-[280px] group hover:bg-yellow-500 duration-150  bg-[#F5F5F5] flex flex-col justify-between py-6 px-4 h-full  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700",
+      className: " max-w-[280px] group hover:bg-yellow-500 duration-150  bg-[#F5F5F5] flex flex-col justify-between pt-6 pb-8 px-4 h-full  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "flex flex-col items-center flex-grow",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
@@ -10032,41 +10093,44 @@ var ProductItem = function ProductItem(_ref) {
           alt: product.img,
           className: "w-[150px] mb-4 max-h-full object-cover"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          className: "font-bold text-black text-center text-xl",
+          className: "font-bold text-black text-center text-xl truncate px-6",
           children: product.name
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          className: "font-light mb-4 text-sm text-center text-black line-clamp-2",
+          className: " font-light mb-4 text-sm text-center text-black line-clamp-2",
           children: product.description_min
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white fill-current text-purple-500 shadow-md py-2 px-6 bg-yellow-500  rounded-xl ",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
-          className: "w-4  stroke-current group-hover:stroke-white",
-          width: "29",
-          height: "29",
-          viewBox: "0 0 29 29",
-          fill: "none",
-          xmlns: "http://www.w3.org/2000/svg",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
-            d: "M9.33341 27.4167C10.0468 27.4167 10.6251 26.8384 10.6251 26.125C10.6251 25.4117 10.0468 24.8334 9.33341 24.8334C8.62005 24.8334 8.04175 25.4117 8.04175 26.125C8.04175 26.8384 8.62005 27.4167 9.33341 27.4167Z",
-            "stroke-width": "4",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
-            d: "M23.5417 27.4167C24.255 27.4167 24.8333 26.8384 24.8333 26.125C24.8333 25.4117 24.255 24.8334 23.5417 24.8334C22.8283 24.8334 22.25 25.4117 22.25 26.125C22.25 26.8384 22.8283 27.4167 23.5417 27.4167Z",
-            "stroke-width": "4",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
-            d: "M1.64795 1.64795H4.23128L7.66712 17.6904C7.79315 18.278 8.12006 18.8032 8.59158 19.1757C9.06309 19.5482 9.6497 19.7446 10.2504 19.7313H22.8829C23.4709 19.7303 24.0409 19.5289 24.4989 19.1602C24.9568 18.7914 25.2753 18.2776 25.4017 17.7034L27.5329 8.10628H5.61337",
-            "stroke-width": "4",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "flex flex-col items-center ",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white fill-current text-purple-500 shadow-md py-2 px-6 bg-yellow-500  rounded-xl ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+            className: "w-4  stroke-current group-hover:stroke-white",
+            width: "29",
+            height: "29",
+            viewBox: "0 0 29 29",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M9.33341 27.4167C10.0468 27.4167 10.6251 26.8384 10.6251 26.125C10.6251 25.4117 10.0468 24.8334 9.33341 24.8334C8.62005 24.8334 8.04175 25.4117 8.04175 26.125C8.04175 26.8384 8.62005 27.4167 9.33341 27.4167Z",
+              "stroke-width": "4",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M23.5417 27.4167C24.255 27.4167 24.8333 26.8384 24.8333 26.125C24.8333 25.4117 24.255 24.8334 23.5417 24.8334C22.8283 24.8334 22.25 25.4117 22.25 26.125C22.25 26.8384 22.8283 27.4167 23.5417 27.4167Z",
+              "stroke-width": "4",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              d: "M1.64795 1.64795H4.23128L7.66712 17.6904C7.79315 18.278 8.12006 18.8032 8.59158 19.1757C9.06309 19.5482 9.6497 19.7446 10.2504 19.7313H22.8829C23.4709 19.7303 24.0409 19.5289 24.4989 19.1602C24.9568 18.7914 25.2753 18.2776 25.4017 17.7034L27.5329 8.10628H5.61337",
+              "stroke-width": "4",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "font-primaryBold ml-4 text-md leading-none",
+            children: "Ajouter au panier"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "font-primaryBold ml-4 text-md leading-none",
-          children: "Ajouter au panier"
-        })]
+        })
       })]
     })
   });
@@ -64978,6 +65042,8 @@ var map = {
 	"./home/Promos.js": "./resources/js/Pages/home/Promos.js",
 	"./home/Services": "./resources/js/Pages/home/Services.js",
 	"./home/Services.js": "./resources/js/Pages/home/Services.js",
+	"./home/Where": "./resources/js/Pages/home/Where.js",
+	"./home/Where.js": "./resources/js/Pages/home/Where.js",
 	"./location/CardLocation": "./resources/js/Pages/location/CardLocation.js",
 	"./location/CardLocation.js": "./resources/js/Pages/location/CardLocation.js",
 	"./location/Location": "./resources/js/Pages/location/Location.js",

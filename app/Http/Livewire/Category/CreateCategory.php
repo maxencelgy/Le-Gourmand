@@ -47,8 +47,8 @@ class CreateCategory extends Component
         Helpers::image_upload($this->img, $category->img, true);
 
         $this->dispatchBrowserEvent('notification', [
-            'title' => "Categoria Agregada",
-            'subtitle' => "La categoria  <b>" . $this->category->name . "</b>  a sido  Agregado correctamente"
+            'title' => "Catégorie ajoutée",
+            'subtitle' => "La <b>catégorie". $this->category->name . "</b>a été ajouté avec succès"
         ]);
 
         $this->dispatchBrowserEvent('list-show');
@@ -81,8 +81,8 @@ class CreateCategory extends Component
 
         $this->emit('resetListCategories');
         $this->dispatchBrowserEvent('notification', [
-            'title' => "Categoria Edtada",
-            'subtitle' => "La categoria  <b>" . $this->category->name . "</b>  a sido  Editada correctamente"
+            'title' => "Catégorie modifiée",
+            'subtitle' => "La <b>catégorie". $this->category->name . "</b>a été modifié correctement"
         ]);
 
         $this->dispatchBrowserEvent('list-show');

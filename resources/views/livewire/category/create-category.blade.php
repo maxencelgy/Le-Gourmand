@@ -1,15 +1,15 @@
 <div>
     <x-create-data>
         <div>
-            <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Editar usuario':'Crear Usuario'">Crear
-                Usuario
+            <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Edit catégorie':'Crear catégorie'">
+                Créer une catégorie
             </h3>
         </div>
         <form x-ref="form_create" class="mt-3" wire:submit.prevent="save">
             <div class="divide-y divide-gray-100">
                 <div class="flex items-center py-4 ">
                     <x-form-label class="w-3/12">
-                        Nombre
+                        Nom
 
                     </x-form-label>
                     <div class=" w-4/12">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="flex items-center py-4 ">
                     <x-form-label class="w-3/12">
-                        Activo
+                        Activer
 
                     </x-form-label>
                     <div class=" w-4/12">

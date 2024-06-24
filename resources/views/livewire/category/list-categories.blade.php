@@ -1,12 +1,12 @@
 <div>
     <x-slot name="header">
         <h2 class="font-bold text-xl text-gray-800 leading-tight">
-            {{ __('Categorias') }}
+            {{ __('Catégorie') }}
         </h2>
     </x-slot>
     <div>
 
-        <x-list-data text-button='Agregar Categoria' :data="$data" :fields="$fields">
+        <x-list-data text-button='Ajouter une catégorie' :data="$data" :fields="$fields">
             <x-slot name="table_data">
                 @foreach ($data as $item)
                     <tr>
@@ -26,7 +26,7 @@
                         <td class="px-6 py-3 whitespace-nowrap">
 
                             <div class="text-sm text-gray-500">
-                                <img class="rounded-lg w-24 object-cover max-w-full" 
+                                <img class="rounded-lg w-24 object-cover max-w-full"
                                 src="/storage/{{ $item->img }}?{{rand(1,100)}}"/>
                             </div>
                         </td>

@@ -41,8 +41,8 @@ const Navbar = () => {
                 <div className="hidden lg:flex items-center space-x-8  text-lg z-40 ">
                     <Link className="hover:text-yellow-500 duration-150" href={route("menu")}>{routes.menu.name}</Link>
                     <Link href="/#equipe" className="hover:text-yellow-500 duration-150"> Notre équipe</Link>
-                    <Link className="hover:text-yellow-500 duration-150"
-                          href={route("service")}>{routes.service.name}</Link>
+                    <Link className="hover:text-yellow-500 duration-150" href={route("service")}>{routes.service.name}</Link>
+                    <Link href="/#ou" className="hover:text-yellow-500 duration-150">Localisation</Link>
 
 
                     {auth.user ? (
@@ -133,6 +133,7 @@ const Navbar = () => {
                         {routes.menu.name}
                     </ResponsiveNavLink>
 
+                    <ResponsiveNavLink href="/#ou" >Localisation</ResponsiveNavLink>
 
                     <ResponsiveNavLink
                         href={route("service")}

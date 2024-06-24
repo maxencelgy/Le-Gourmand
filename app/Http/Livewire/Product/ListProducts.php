@@ -16,10 +16,10 @@ class ListProducts extends Component
         'renderListProducts' => 'render',
         'resetListProducts' => 'resetList'
     ];
-    
+
         public function render()
     {
-        $fields = ['Nombre - Categoria',  'Precio', 'Imagen', ' Ultimo acceso', 'Activo'];
+        $fields = ['Nom - Description', 'Catégorie', 'Prix', 'Stock', 'Actions'];
 
         $data = Product::where('name', 'like', '%' . $this->search . '%')
             ->with('category')
@@ -29,7 +29,7 @@ class ListProducts extends Component
             ->orderBy($this->sortBy, $this->sortDirection)
             ->paginate(10);
 
-        
+
 
         return view('livewire.product.list-products', compact('data', 'fields'));
     }

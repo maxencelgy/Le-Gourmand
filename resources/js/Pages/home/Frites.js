@@ -8,7 +8,10 @@ const Frites = () => {
 
             <div className="wrap">
                 <div className="flex items-top justify-between gap-4">
-                    <img className="rounded-lg w-[43%]" src="/storage/home/frites.jpeg" alt=""/>
+
+                    <div className="overflow-hidden w-[43%] rounded-lg">
+                        <img className="  object-cover  transition duration-500 transform hover:scale-110 hover:brightness-75  " src="/storage/home/frites.jpeg" alt=""/>
+                    </div>
                     <div className="w-[51%] text-white">
                         <h2 className="font-title  text-4xl mb-8">Des Frites 100% maison</h2>
                         <p className="font-normal">Découvrez le goût authentique de nos frites 100% maison,

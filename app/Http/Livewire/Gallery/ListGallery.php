@@ -19,7 +19,7 @@ class ListGallery extends Component
 
     public function render()
     {
-        $fields = ['Nombre - Slug',  'Banner', 'Ultimo acceso','activo'];
+        $fields = ['Nom - Slug',  'Bannière', 'Dernier accès','Actions'];
 
         $data = Gallery::where('name', 'like', '%' . $this->search . '%')
             ->with('images')

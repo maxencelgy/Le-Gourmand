@@ -19,8 +19,8 @@ class ListPromo extends Component
 
     public function render()
     {
-        $fields = ['Titulo', 'Ultimo acceso','Activo'];
 
+        $fields = ['Title', 'Last access','Active'];
         $data = Promo::where('title', 'like', '%' . $this->search . '%')
             ->orderBy($this->sortBy, $this->sortDirection)
             ->paginate(10);

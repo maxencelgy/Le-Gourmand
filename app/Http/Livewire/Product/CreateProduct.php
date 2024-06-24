@@ -77,8 +77,8 @@ class CreateProduct extends Component
         }
 
         $this->dispatchBrowserEvent('notification', [
-            'title' => "Registro Agregado",
-            'subtitle' => "La Registro  <b>" . $this->product->name . "</b>  a sido  Agregado correctamente"
+            'title' => "Inscription ajoutée",
+            'subtitle' => "Le Registre<b>". $this->product->name . "</b>a été ajouté avec succès"
         ]);
 
         $this->dispatchBrowserEvent('list-show');
@@ -122,8 +122,8 @@ class CreateProduct extends Component
         }
 
         $this->dispatchBrowserEvent('notification', [
-            'title' => "Registro Editado",
-            'subtitle' => "El Registro  <b>" . $this->product->name . "</b>  a sido  Editado correctamente"
+            'title' => "Enregistrement édité",
+            'subtitle' => "Le Registre<b>". $this->product->name . "</b>a été modifié avec succès"
         ]);
         $this->reset('img', 'banner', 'images', 'category_id');
         $this->resetErrorBag();
@@ -161,7 +161,7 @@ class CreateProduct extends Component
         $this->product->images = $this->product->images()->get();
 
         $this->dispatchBrowserEvent('notification', [
-            'title' => "Imagen eliminada",
+            'title' => "Image supprimée",
             'subtitle' => ""
         ]);
     }
@@ -170,9 +170,9 @@ class CreateProduct extends Component
         //Storage::delete('thumbnail/' . $product->img);
         //Storage::delete($product->img);
         //Storage::delete($product->banner);
-        if ($product->images->isNotEmpty() ) {  //isNotEmpty  -> no esta vacio 
+        if ($product->images->isNotEmpty() ) {  //isNotEmpty  -> no esta vacio
             $images_delete=[];
-            foreach ($product->images as $key => $value) {                
+            foreach ($product->images as $key => $value) {
                 $array_images_delete[$key]=$this->path.'/'.$value->image;
             }
             //Storage::delete($images_delete);
@@ -181,8 +181,8 @@ class CreateProduct extends Component
         }
 
         $this->dispatchBrowserEvent('notification', [
-            'title' => "Registro Eliminado",
-            'subtitle' => "El Registro  <b>" . $this->product->name . "</b>  a sido  Eliminado correctamente"
+            'title' => "Produit supprimé",
+            'subtitle' => "Le Registre<b>". $this->product->name . "</b>a été supprimé avec succès"
         ]);
         $product->delete();
         $this->emit('resetListProducts');

@@ -5,14 +5,14 @@
         </h2>
     </x-slot>
     <div>
-        
-        <x-list-data text-button='Agregar Targeta' :data="$data" :fields="$fields">
+
+        <x-list-data text-button='Ajouter une carte cadeaux' :data="$data" :fields="$fields">
             <x-slot name="table_data">
                 @foreach ($data as $item)
                     <tr>
                         <td class="px-6 py-3 text-sm font-medium">
                             {{ $item->id }}
-                        </td>                                          
+                        </td>
 
                         <td class="px-6 py-3 whitespace-nowrap text-sm text-gray-500">
                             {{ Helpers::format_price($item->price) }}

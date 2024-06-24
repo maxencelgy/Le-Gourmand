@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
     <div>
-        
-        <x-list-data text-button='Agregar Glaeria' :data="$data" :fields="$fields">
+
+        <x-list-data text-button='Ajouter une gallerie' :data="$data" :fields="$fields">
             <x-slot name="table_data">
                 @foreach ($data as $item)
                 <tr>
@@ -26,7 +26,7 @@
                     <td class="px-6 py-3 whitespace-nowrap text-sm text-gray-500">
                         {{ $item->images->count() }}
                     </td>
-                    
+
                     <td class="px-6 py-3 whitespace-nowrap text-sm text-gray-500">
                         {{ $item->updated_at }}
                     </td>

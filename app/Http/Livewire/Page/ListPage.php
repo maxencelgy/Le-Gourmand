@@ -19,7 +19,7 @@ class ListPage extends Component
 
     public function render()
     {
-        $fields = ['Nombre - Tipo',  'Banner', 'Ultimo acceso', ];
+        $fields = ['Titre', 'Slug', 'Dernier accès', 'Actions'];
 
         $data = Page::where('title', 'like', '%' . $this->search . '%')
             ->orderBy($this->sortBy, $this->sortDirection)

@@ -7,13 +7,13 @@
 
         <label for="{{ $name }}" wire:loading.class="bg-gray-500 cursor-auto"
             wire:loading.class.remove="bg-gray-800 cursor-pointer" wire:target="{{ $name }}"
-            class=" inline-block  mb-4 cursor-pointer  px-4 py-2 bg-gray-800 border border-transparent 
-            rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-500 
-            active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray 
+            class=" inline-block  mb-4 cursor-pointer  px-4 py-2 bg-gray-800 border border-transparent
+            rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-500
+            active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray
             sdisabled:opacity-25 transition ease-in-out duration-150">
 
-            <span wire:loading.class="hidden" wire:target="{{ $name }}">Subir Imagen</span>
-            <span wire:loading wire:target="{{ $name }}" x-text=" 'Subiendo ' + progress + '%' "></span>
+            <span wire:loading.class="hidden" wire:target="{{ $name }}">Envoyer une image</span>
+            <span wire:loading wire:target="{{ $name }}" x-text=" 'Envoie ' + progress + '%' "></span>
 
             <input wire:target="{{ $name }}" wire:loading.attr="disabled" id="{{ $name }}" type="file"
                 class="sr-only" wire:model="{{ $name }}" accept=".png, .jpg, .jpeg"
@@ -49,9 +49,9 @@
                             src="{{ url('/storage/' . $item->img) }}?{{ rand(1, 300) }}">
                         <button type="button" wire:click="remove_img({{ $item->id }})"
                             class="py-2 w-full bg-red-500 text-sm font-medium text-white">
-                            
-                            <span wire:loading.class="hidden" wire:target="remove_img({{ $item->id }})">Eliminar</span>
-                            
+
+                            <span wire:loading.class="hidden" wire:target="remove_img({{ $item->id }})">Supprimer</span>
+
                             <span wire:loading wire:target="remove_img({{ $item->id }})">
                                 <x-spinner-loading class="w-4 h-5 text-gray-200"/>
                             </span>

@@ -18,7 +18,7 @@ class ListGiftCard extends Component
 
     public function render()
     {
-        $fields = [  'Precio', 'Imagen', ' Ultimo acceso', 'Activo'];
+        $fields = [  'Prix', 'Image', 'Dernier accès', 'Actions'];
 
         $data = Product::where('name', 'like', '%' . $this->search . '%')
             ->with('category')

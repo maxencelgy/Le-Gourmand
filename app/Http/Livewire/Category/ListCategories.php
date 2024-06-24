@@ -10,16 +10,16 @@ class ListCategories extends Component
 {
     use WithPagination;
     use WithSorting;
-    
+
     protected $listeners = [
         'renderListCategories' => 'render',
         'resetListCategories' => 'resetList'
     ];
 
-    
+
     public function render()
-    {   
-        $fields=['Nombre - slug','Imagen',' Ultimo acceso','Activo'];
+    {
+        $fields=['Nom - slug','Image','Dernier accès','Active'];
 
         $data = Category::where('name', 'like', '%' . $this->search . '%')
         ->where('type','!=','gift_card')

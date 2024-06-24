@@ -16,7 +16,7 @@ class CreatePage extends Component
     public $open_modal_confirmation = false;
 
     public $banner;
-    
+
 
     protected $rules = [
         'page.title' => 'required|string|max:255',
@@ -51,7 +51,7 @@ class CreatePage extends Component
 
         $this->dispatchBrowserEvent('notification', [
             'title' => "Registro Editado",
-            'subtitle' => "El Registro  <b>" . $this->page->name . "</b>  a sido  Editado correctamente"
+            'subtitle' => "Le Registre<b>". $this->page->name . "</b>a été modifié avec succès"
         ]);
         $this->reset('banner');
         $this->resetErrorBag();

@@ -19,7 +19,7 @@ class ListOrder extends Component
 
     public function render()
     {
-        $fields = ['order', 'Cliente', 'Total', 'Estado', 'Fecha de Creacion'];
+        $fields = ['Commande', 'Utilisateur', 'Montant', 'Statut', 'Actions'];
 
         $data = Order::where('order', 'like', '%' . $this->search . '%')
             ->with('user')

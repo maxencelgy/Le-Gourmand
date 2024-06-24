@@ -43,7 +43,7 @@ stock --}}
                 </div>
 
                 <div class="col-span-3">
-                    <x-form-label class="block">Categorias</x-form-label>
+                    <x-form-label class="block">Catégorie </x-form-label>
                     <x-form-select name="menu" wire:model.defer="category_id">
                         <option selected>Selecione Categoria</option>
                         @foreach ($categories as $category)

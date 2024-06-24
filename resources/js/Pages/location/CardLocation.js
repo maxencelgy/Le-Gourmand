@@ -1,6 +1,6 @@
-const CardLocation = ({ title, phone = "879-123-444", address, img }) => {
+const CardLocation = ({ title, phone = "0232560606", address, img }) => {
     return (
-        <div>
+        <div className="w-full">
             <div className="overflow-hidden">
                 <img
                     src={ img}
@@ -9,10 +9,12 @@ const CardLocation = ({ title, phone = "879-123-444", address, img }) => {
                 />
             </div>
             <div className="py-9 px-5 text-center space-y-2">
-                <h5 className=" font-primary text-red-500 text-3xl ">{title}</h5>
-                <h6 className="font-primary text-2xl">Telefono: {phone}</h6>
-                <h6 className="font-primary text-2xl">Direccion</h6>
-                <p className="text-lg">{address}</p>
+                <h5 className=" font-title text-red-500 text-5xl ">{title}</h5>
+                <h6 className=" text-2xl">Téléphone: {phone}</h6>
+
+                <h6 className=" text-2xl" >Adresse : {address} </h6>
+                <h6 className=" text-2xl">Ouvert : 7j/7 </h6>
+
             </div>
         </div>
     )

@@ -12,7 +12,7 @@ class ListUsers extends Component
 
     use WithPagination;
     use WithSorting;
-    public $open='list'; 
+    public $open='list';
     protected $listeners = [
         'renderListUsers' => 'render',
         'resetListusers' => 'resetList'
@@ -20,7 +20,8 @@ class ListUsers extends Component
 
     public function render()
     {
-        $fields=['Nombre - email','Telefono',' Ultimo acceso','Activo'];
+        $fields=['Nom - email','Téléphone','Dernier accès','Active'];
+
         $data = User::where('name', 'like', '%' . $this->search . '%')
             ->orderBy($this->sortBy, $this->sortDirection)
             ->paginate(10);

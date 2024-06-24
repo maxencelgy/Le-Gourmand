@@ -9,6 +9,8 @@ import TitleSection from "@/Components/TitleSection";
 import Team from "@/Pages/team/Team";
 import people from "@/Pages/team/people.json";
 import TeamItem from "@/Pages/team/TeamItem";
+import Where from "@/Pages/home/Where";
+import CardLocation from "@/Pages/location/CardLocation";
 
 const Home = (props) => {
 
@@ -33,9 +35,7 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-            <Frites/>
             <div className="bg-purple-500" >
-
                 <TitleSection title="Notre equipe"/>
                 <div className="container pb-16" >
                     <div
@@ -45,13 +45,22 @@ const Home = (props) => {
                         ))}
                     </div>
                 </div>
+                <div id="equipe"    ></div>
 
             </div>
             <Services/>
+            <div className=" pt-4 pb-20" >
+                <CardLocation
+                    title="ROUEN"
+                    className="w-full"
+                    address="7 rue de l'avalasse 76000, Rouen"
+                    img="/storage/home/burger-alleno.jpg"
+                />
 
-
+            </div>
+<div id="ou"></div>
         </AppLayout>
-    )
+)
 }
 
 export default Home
