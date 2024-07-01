@@ -13,7 +13,7 @@ active
 stock --}}
     <x-create-data>
         <div>
-            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editar':'Crear') +' Producto'"></h3>
+            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Crear') +' Producto'"></h3>
         </div>
         <form x-ref="form_create" class="mt-3" wire:submit.prevent="save">
             <div class="grid grid-cols-12 gap-6">
@@ -53,7 +53,7 @@ stock --}}
                     @error('category_id')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
                 <div class="col-span-3">
-                    <x-form-label class="block">Activo</x-form-label>
+                    <x-form-label class="block">Actif</x-form-label>
                     <x-form-active model='product.active'/>
                     @error('product.active')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
@@ -116,14 +116,14 @@ stock --}}
         </form>
         <div class="text-right py-3">
             <x-secondary-button x-on:click="$dispatch('list-show')" wire:loading.attr="disabled">
-                volver
+                Retour
             </x-secondary-button>
             <x-button x-show="!edit" class="ml-2" wire:click="save" wire:loading.attr="disabled">
-                Guardar
+                Sauvegarder
             </x-button>
             <x-button x-show="edit" x-on:click="$wire.update(id)" class="ml-2"
                 wire:loading.attr="disabled">
-                Editar
+                Editer
             </x-button>
 
         </div>

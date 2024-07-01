@@ -1,7 +1,7 @@
 <div>
-    <div x-data="{show:false,edit:false,id:''}"         
-    @form-show.window= "show=true;$dispatch('list-hidden')" 
-    @form-hidden.window= "show=false" 
+    <div x-data="{show:false,edit:false,id:''}"
+    @form-show.window= "show=true;$dispatch('list-hidden')"
+    @form-hidden.window= "show=false"
     @form-create.window="$dispatch('form-show');edit=false;id='';$wire.create();"
     @form-edit.window="$dispatch('form-show');edit=true;id=$event.detail;$wire.edit($event.detail);"
     x-transition.duration.50ms>
@@ -13,7 +13,7 @@
                 </div>
                 <div wire:loading.class="invisible" wire:target="create, edit">
                     <div>
-                        <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Editar usuario':'Crear Usuario'">Crear
+                        <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Editer usuario':'Crear Usuario'">Crear
                             Usuario
                         </h3>
                     </div>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="flex items-center py-4 ">
                                 <x-form-label class="w-3/12">
-                                    Activo
+                                    Actif
 
                                 </x-form-label>
                                 <div class=" w-4/12">
@@ -113,14 +113,14 @@
                     </form>
                     <div class="text-right py-3">
                         <x-secondary-button x-on:click="$dispatch('list-show')" wire:loading.attr="disabled">
-                            volver
+                            Retour
                         </x-secondary-button>
                         <x-button x-show="!edit" class="ml-2" wire:click="save"
                             wire:loading.attr="disabled">
-                            Guardar
+                            Sauvegarder
                         </x-button>
                         <x-button x-show="edit" x-on:click="$wire.update(id)" class="ml-2"
-                            wire:loading.attr="disabled"> Editar </x-button>
+                            wire:loading.attr="disabled"> Editer </x-button>
 
                     </div>
 

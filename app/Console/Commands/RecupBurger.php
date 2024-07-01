@@ -34,6 +34,7 @@ class RecupBurger extends Command
      */
     public function handle()
     {
+        Product::truncate();
         $produits = [];
         $apiBk = Http::get('https://webapi.burgerking.fr/blossom/api/v13/public/carte/burgers')->json();
 
@@ -78,15 +79,6 @@ class RecupBurger extends Command
             if (Storage::exists($path)) {
                 echo "Image stored correctly";
 
-//                // Create an instance of the Image model with the correct image path
-//                $image = Image::create([
-//                    'alt' => 'Some alt text', // Replace with actual alt text
-//                    'title' => 'Some title', // Replace with actual title
-//                    'img' => $path,
-//                    'imageable_id' => $product->id,
-//                    'imageable_type' => Product::class,
-//                ]);
-
 
                $cat = Category::updateOrCreate(
                     ['name' => $product['category']],
@@ -109,8 +101,8 @@ class RecupBurger extends Command
                     'banner' => $path,
                     'price' => $product['price'],
                     'stock' => rand(0, 100),
-                    'portion_size' => $product['portion'] . 'g',
-                    'calories' => $product['calories'] . 'kcal',
+                    'portion_size' => $product['portion'] . ' g',
+                    'calories' => $product['calories'] . ' kcal',
                     'allergies' => $product['allergens'],
                 ]);
                 $this->info('Produit ' . $prod->name . ' créé');

@@ -77,14 +77,14 @@
         </form>
         <div class="text-right py-3">
             <x-secondary-button x-on:click="$dispatch('list-show')" wire:loading.attr="disabled">
-                volver
+                Retour
             </x-secondary-button>
             <x-button x-show="!edit" class="ml-2" wire:click="save" wire:loading.attr="disabled">
-                Guardar
+                Sauvegarder
             </x-button>
             <x-button x-show="edit" x-on:click="$wire.update(id)" class="ml-2"
                 wire:loading.attr="disabled">
-                Editar </x-button>
+                Editer </x-button>
 
         </div>
     </x-create-data>

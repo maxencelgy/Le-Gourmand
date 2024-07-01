@@ -7,6 +7,8 @@ use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Faker;
 
@@ -19,38 +21,86 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        
+
         Product::truncate();
-        $categories = Category::get();
-        $faker = Faker\Factory::create();
-        foreach ($categories->where('type', 'menu') as $category) {
-            for ($i = 1; $i < 8; $i++) {
-                //solo hay 8 imagenes de productos por caategoria  asi que solo se crearan 8 productos por categoria
-                Product::factory()
-                    ->has(Image::factory()->count(3))
-                    ->create([
-                        "img" => "$category->slug/img-" . $i . ".jpg",
-                        "banner" => "$category->slug/banner-1.jpg",
-                        "category_id" => $category->id,
-                    ]);
+        $produits = [];
+        $apiBk = Http::get('https://webapi.burgerking.fr/blossom/api/v13/public/carte/burgers')->json();
+
+        foreach ($apiBk['products'] as $product) {
+            $single = Http::get('https://webapi.burgerking.fr/blossom/api/v13/public' . $product['productId'])->json();
+            $allergens = [];
+            foreach ($single['product']['allergens'] as $allergen) {
+                $allergens[] = $allergen['name'];
+            }
+            $produit = [
+                'title' => $single['title'],
+                'description' => $single['description'],
+                'category' => $single['filters'][0]['name'],
+                'image' => $single['product']['image'],
+                'portion' => $single['product']['nutrition'][0]['portion'],
+                'calories' => $single['product']['nutrition'][0]['share'],
+                'price' => rand(5, 15),
+                'allergens' => implode(', ', $allergens),
+            ];
+            $produits[] = $produit;
+        }
+
+        foreach ($produits as $key => $product) {
+            // Ensure that $produit['image'] is a string containing the URL
+            $imageResponse = Http::get($product['image'][0]);
+            // Check if the image content was correctly retrieved
+            if ($imageResponse->failed()) {
+                echo "Failed to retrieve image content";
+                continue;
+            }
+
+            $imageContents = $imageResponse->body();
+            $imageName = $key . '.jpg'; // Generate a random name for the image
+
+            // Ensure the destination directory exists
+            Storage::makeDirectory('images');
+
+            $path = 'images/' . $imageName;
+            Storage::put($path, $imageContents);
+
+            // Check if the image was stored correctly
+            if (Storage::exists($path)) {
+                echo "Image stored correctly";
+
+//
+
+
+                $cat = Category::updateOrCreate(
+                    ['name' => $product['category']],
+                    [
+                        'slug' => Str::slug($product['category']),
+                        'img' => $path,
+                        'type' => 'menu',
+                    ]
+                );
+
+
+                // Print the created Image instance
+                $prod = Product::create([
+                    'name' => $product['title'],
+                    'slug' => Str::slug($product['title']),
+                    'description_max' => $product['description'], // 'description_max' => $product['description'],
+                    'description_min' => substr($product['description'],0, 100),
+                    'category_id' => $cat->id,
+                    'img' => $path,
+                    'banner' => $path,
+                    'price' => $product['price'],
+                    'stock' => rand(0, 100),
+                    'portion_size' => $product['portion'] . 'g',
+                    'calories' => $product['calories'] . 'kcal',
+                    'allergies' => $product['allergens'],
+                ]);
+
+
+            } else {
+                echo "Failed to store image";
             }
         }
-        $category_gift_card = $categories->where('type', 'gift_cards')->first();
-        $gift_card = [50, 85, 125];
-        foreach ($gift_card as $amount) {
-            $name = 'Gift Card ' . $amount;
-            Product::factory()->create([
-                "name" => $name,
-                "slug" => Str::slug($name),
-                "img" => "gift_cards/card-$amount.png",
-                "banner" => "gift_cards/banner.jpg",
-                "description_min" =>$faker->text(100),
-                "price" => $amount,
-                'category_id' => $category_gift_card->id,
-                "portion_size" => null,
-                "calories" => null,
-                "allergies" => null,
-            ]);
-        }
+
     }
 }

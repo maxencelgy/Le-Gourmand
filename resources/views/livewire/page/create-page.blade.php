@@ -2,7 +2,7 @@
     <x-create-data>
 
         <form x-ref="form_create" class="" wire:submit.prevent="save">
-            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editar':'Crear') +' Datos generales'"></h3>
+            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Crear') +' Datos generales'"></h3>
             <div class="grid grid-cols-12 gap-6 mt-3">
 
                 <div class="col-span-6">
@@ -31,14 +31,14 @@
 
         <div class="text-right py-3">
             <x-secondary-button x-on:click="$dispatch('list-show')" wire:loading.attr="disabled">
-                volver
+                Retour
             </x-secondary-button>
             <x-button x-show="!edit" class="ml-2" wire:click="save" wire:loading.attr="disabled">
-                Guardar
+                Sauvegarder
             </x-button>
             <x-button x-show="edit" x-on:click="$wire.update(id)" class="ml-2"
                 wire:loading.attr="disabled">
-                Editar
+                Editer
             </x-button>
 
         </div>
