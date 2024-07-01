@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-bold text-xl text-gray-800 leading-tight">
-            {{ __('Codigo de descuento') }}
+            {{ __('Code de réduction') }}
         </h2>
     </x-slot>
     <div>
@@ -37,7 +37,7 @@
                             @else
                                 <span
                                     class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
-                                    Valor - {{ Helpers::format_price($item->value) }}
+                                    Valeur - {{ Helpers::format_price($item->value) }}
                                 </span>
                             @endif
                         </td>

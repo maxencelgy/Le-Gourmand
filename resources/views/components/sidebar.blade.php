@@ -30,11 +30,7 @@ $nav_items = [
         'route' => 'dashboard.discount_code',
         'icon' => 'badge-check',
     ],
-    [
-        'name' => 'Galerie',
-        'route' => 'dashboard.gallery',
-        'icon' => 'photograph',
-    ],
+
     [
         'name' => 'Pages',
         'route' => 'dashboard.page',

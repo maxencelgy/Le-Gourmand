@@ -1,12 +1,12 @@
 <div>
     <x-slot name="header">
         <h2 class="font-bold text-xl text-gray-800 leading-tight">
-            {{ __('Prodcutos') }}
+            {{ __('Produits') }}
         </h2>
     </x-slot>
     <div>
-        
-        <x-list-data text-button='Agregar Productos' :data="$data" :fields="$fields">
+
+        <x-list-data text-button='Ajouter un produit' :data="$data" :fields="$fields">
             <x-slot name="table_data">
                 @foreach ($data as $item)
                     <tr>
@@ -23,19 +23,19 @@
                                 @if ($item->category)
                                 {{ $item->category->name }}
                                 @else
-                                <span class="text-red-400">sin categoria</span>
+                                <span class="text-red-400">Voir catégorie</span>
                                 @endif
                             </div>
-                        </td>                        
-
+                        </td>
+                        <td class="px-6 py-3 ">
+                            <img class="rounded-lg w-16 h-16 object-cover max-w-full"
+                                 src="/storage/{{ $item->img }}?{{rand(1,100)}}" />
+                        </td>
                         <td class="px-6 py-3 whitespace-nowrap text-sm text-gray-500">
                             {{ Helpers::format_price($item->price) }}
                         </td>
 
-                        <td class="px-6 py-3 ">
-                            <img class="rounded-lg w-16 h-16 object-cover max-w-full"
-                                src="/storage/{{ $item->img }}?{{rand(1,100)}}" />
-                        </td>
+
 
                         <td class="px-6 py-3 whitespace-nowrap text-sm text-gray-500">
                             {{ $item->updated_at }}

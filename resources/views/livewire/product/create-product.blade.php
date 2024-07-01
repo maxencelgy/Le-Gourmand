@@ -13,13 +13,13 @@ active
 stock --}}
     <x-create-data>
         <div>
-            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Crear') +' Producto'"></h3>
+            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Créer') +' produit'"></h3>
         </div>
         <form x-ref="form_create" class="mt-3" wire:submit.prevent="save">
             <div class="grid grid-cols-12 gap-6">
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Nombre</x-form-label>
+                    <x-form-label class="block">Nom</x-form-label>
                     <x-form-input class="w-full" type="text" wire:model.defer="product.name" />
                     @error('product.name')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
@@ -31,7 +31,7 @@ stock --}}
                 </div>
 
                 <div class="col-span-3">
-                    <x-form-label class="block">Precio</x-form-label>
+                    <x-form-label class="block">Prix</x-form-label>
                     <x-form-input class="w-full" type="number" wire:model.defer="product.price" />
                     @error('product.price')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
@@ -59,30 +59,30 @@ stock --}}
                 </div>
 
                 <div class="col-span-3">
-                    <x-form-label class="block">Tamañode porcion</x-form-label>
+                    <x-form-label class="block">Portion</x-form-label>
                     <x-form-input class="w-full" type="text" wire:model.defer="product.portion_size" />
                     @error('product.portion_size')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
                 <div class="col-span-3">
-                    <x-form-label class="block">Calorias</x-form-label>
+                    <x-form-label class="block">Calories</x-form-label>
                     <x-form-input class="w-full" type="text" wire:model.defer="product.calories" />
                     @error('product.calories')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
                 <div class="col-span-6">
-                    <x-form-label class="block">Alergias</x-form-label>
+                    <x-form-label class="block">Alergie</x-form-label>
                     <x-form-input class="w-full" type="text" wire:model.defer="product.allergies" />
                     @error('product.allergies')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
 
                 <div class="col-span-12">
-                    <x-form-label class="block">Pequeña Descripción</x-form-label>
+                    <x-form-label class="block">Petite description</x-form-label>
                     <x-form-textarea wire:model.defer="product.description_min" class="mt-2" rows="5">
                     </x-form-textarea>
                     @error('product.description_min')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Imagen Principal</x-form-label>
+                    <x-form-label class="block">Image Principal</x-form-label>
                     <div class="mt-2">
                         <x-form-input-file :temp="$img" :multiple="false" name="img" :saved="$product->img" />
                         @error('img')
@@ -102,7 +102,7 @@ stock --}}
                 </div>
 
                 <div class="col-span-12">
-                    <x-form-label class="block">Imagenes</x-form-label>
+                    <x-form-label class="block">Imagees</x-form-label>
                     <div class="mt-2">
                         <x-form-input-file :temp="$images" :multiple="true" name="images" :saved="$product->images" />
                         @error('images')
@@ -138,11 +138,11 @@ stock --}}
 
             <x-confirmation-modal>
                 <x-slot name="title">
-                    Borrar Producto
+                    Borrar produit
                 </x-slot>
 
                 <x-slot name="content">
-                    ¿Estás seguro de que deseas eliminar esta Producto?
+                    ¿Estás seguro de que deseas eliminar esta produit?
                 </x-slot>
 
                 <x-slot name="footer">
@@ -152,7 +152,7 @@ stock --}}
 
                     <x-danger-button class="ml-2" x-on:click="$wire.delete(id)"
                         wire:loading.attr="disabled">
-                        <span wire:loading.class="hidden" wire:target="delete">Borrar Producto</span>
+                        <span wire:loading.class="hidden" wire:target="delete">Borrar produit</span>
                         <span wire:loading wire:target="delete"> Borrando... </span>
                     </x-danger-button>
                 </x-slot>

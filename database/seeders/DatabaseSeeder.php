@@ -18,13 +18,13 @@ class DatabaseSeeder extends Seeder
     {
         Image::truncate();
         $this->call([
-            
+
             CategorySeeder::class,
             ProductSeeder::class,
             UserSeeder::class,
             ShoppingCartSeeder::class,
             PageSeeder::class,
-            GallerySeeder::class,
+//            GallerySeeder::class,
             //PromoSeeder::class,
         ]);
         DiscountCode::factory(10)->create();

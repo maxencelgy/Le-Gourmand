@@ -2,18 +2,18 @@
 
     <x-create-data>
         <div>
-            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Crear') +' Producto'"></h3>
+            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Créer') +' produit'"></h3>
         </div>
         <form x-ref="form_create" class="mt-3" wire:submit.prevent="save">
             <div class="grid grid-cols-12 gap-6">
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Nombre</x-form-label>
+                    <x-form-label class="block">Nom</x-form-label>
                     <x-form-input class="w-full mt-2" type="text" wire:model.defer="discount_code.name" />
                     @error('discount_code.name')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
                 <div class="col-span-8">
-                    <x-form-label class="block">Pequeña Descripcion</x-form-label>
+                    <x-form-label class="block">Petite Description</x-form-label>
                     <x-form-input class="w-full mt-2" type="text" wire:model.defer="discount_code.description" />
                     @error('discount_code.description')<span
                         class="error error-input">{{ $message }}</span>@enderror
@@ -22,21 +22,21 @@
 
 
                 <div class="col-span-3">
-                    <x-form-label class="block">Codigo</x-form-label>
+                    <x-form-label class="block">Code</x-form-label>
                     <x-form-input class="w-full mt-2 uppercase" type="text" wire:model.defer="discount_code.code" />
                     @error('discount_code.code')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
                 <div class="col-span-3">
-                    <x-form-label class="block">Tipo</x-form-label>
+                    <x-form-label class="block">Type</x-form-label>
                     <x-form-select name="menu" wire:model.defer="discount_code.type">
-                        <option selected>Selecione Tipo de valor</option>
+                        <option selected>Selecione Type de Valeur</option>
                         <option value="percent">Porcentaje</option>
                         <option value="amount">Monto</option>
                     </x-form-select>
                     @error('category_id')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
                 <div class="col-span-3">
-                    <x-form-label class="block">Valor</x-form-label>
+                    <x-form-label class="block">Valeur</x-form-label>
                     <x-form-input class="w-full mt-2" type="number" min="0" wire:model.defer="discount_code.value" />
                     @error('discount_code.value')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>

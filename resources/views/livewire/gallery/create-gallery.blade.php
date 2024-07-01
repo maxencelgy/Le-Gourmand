@@ -1,13 +1,13 @@
 <div>
     <x-create-data>
         <div>
-            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Crear') +' Galeria'"></h3>
+            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Créer') +' Galeria'"></h3>
         </div>
         <form x-ref="form_create" class="mt-3" wire:submit.prevent="save">
             <div class="grid grid-cols-12 gap-6">
 
                 <div class="col-span-5">
-                    <x-form-label class="block">Nombre</x-form-label>
+                    <x-form-label class="block">Nom</x-form-label>
                     <x-form-input class="w-full" type="text" wire:model.defer="gallery.name" />
                     @error('gallery.name')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
@@ -20,7 +20,7 @@
 
 
                 <div class="col-span-10">
-                    <x-form-label class="block">Pequeña Descripción</x-form-label>
+                    <x-form-label class="block">Petite description</x-form-label>
                     <x-form-textarea wire:model.defer="gallery.description" rows="5">
                     </x-form-textarea>
                     @error('gallery.description')<span class="error error-input">{{ $message }}</span>@enderror
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col-span-12">
-                    <x-form-label class="block">Imagenes</x-form-label>
+                    <x-form-label class="block">Imagees</x-form-label>
                     <div class="mt-2">
                         <x-form-input-file :temp="$images" :multiple="true" name="images" :saved="$gallery->images" />
                         @error('images')

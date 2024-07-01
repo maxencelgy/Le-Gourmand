@@ -21,11 +21,11 @@ class UserSeeder extends Seeder
     {
         User::truncate();
         User::factory()->create([
-            'email' => 'user@user.com',
+            'email' => 'admin@gmail.com',
             'is_admin' => 1,
         ]);
         User::factory()->create([
-            'email' => 'user@user2.com',
+            'email' => 'maxencelgy@gmail.com',
         ]);
         User::factory()
             ->count(20)

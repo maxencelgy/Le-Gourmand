@@ -2,7 +2,7 @@
     <x-create-data>
 
         <form x-ref="form_create" class="" wire:submit.prevent="save">
-            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Crear') +' Datos generales'"></h3>
+            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Créer') +' Datos generales'"></h3>
             <div class="grid grid-cols-12 gap-6 mt-3">
 
                 <div class="col-span-6">

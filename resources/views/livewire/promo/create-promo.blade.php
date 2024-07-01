@@ -2,7 +2,7 @@
 
     <x-create-data>
         <div>
-            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Crear') +' Promocion'"></h3>
+            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Créer') +' Promocion'"></h3>
         </div>
         <form x-ref="form_create" class="mt-3" wire:submit.prevent="save">
             <div class="grid grid-cols-12 gap-6">
@@ -24,10 +24,10 @@
                 </div>
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Producto</x-form-label>
+                    <x-form-label class="block">produit</x-form-label>
                         <div>
                             <x-form-select name="menu" wire:model.defer="product_id">
-                                <option selected>Seleccione el producto</option>
+                                <option selected>Seleccione el produit</option>
                                 @foreach ($categories as $category)
                                     <optgroup label="{{ $category->name }}">
                                         @foreach ($category->products as $product)
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="col-span-12 ">
-                    <x-form-label class="block">Imagen</x-form-label>
+                    <x-form-label class="block">Image</x-form-label>
                     <div >
                         <x-form-input-file :temp="$img" :multiple="false" name="img" :saved="$promo->img" />
                         <x-form-input-error for="img"  />

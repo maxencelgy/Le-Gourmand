@@ -13,7 +13,7 @@
                 </div>
                 <div wire:loading.class="invisible" wire:target="create, edit">
                     <div>
-                        <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Editer usuario':'Crear Usuario'">Crear
+                        <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Editer usuario':'Créer Usuario'">Créer
                             Usuario
                         </h3>
                     </div>
@@ -21,7 +21,7 @@
                         <div class="divide-y divide-gray-100">
                             <div class="flex items-center py-4 ">
                                 <x-form-label class="w-3/12">
-                                    Nombre
+                                    Nom
 
                                 </x-form-label>
                                 <div class=" w-4/12">

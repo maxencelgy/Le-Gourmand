@@ -11,7 +11,7 @@ import { LinkAuthenticationElement } from "@stripe/react-stripe-js";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: "user@user2.com",
+        email: "maxence",
         password: "password",
         remember: 1,
     });

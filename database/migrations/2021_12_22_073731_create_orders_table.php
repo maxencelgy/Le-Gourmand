@@ -24,7 +24,7 @@ class CreateOrdersTable extends Migration
             $table->float('sub_total',10, 2);
             $table->float('tax_percent',4, 2);
             $table->float('tax_amount',10, 2);
-            $table->float('shipping',10, 2);
+//            $table->float('shipping',10, 2);
             $table->float('total',10, 2);
             $table->enum('state', ['canceled', 'refunded', 'successful'])->default('successful');
             $table->string('stripe_id')->nullable()->index();

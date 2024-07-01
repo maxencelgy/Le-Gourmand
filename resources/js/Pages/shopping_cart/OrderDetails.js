@@ -92,7 +92,7 @@ const OrderDetails = ({ order }) => {
                                 {order.discount && (
                                     <tr className="font-medium italic">
                                         <td className="px-6 py-3 ">
-                                            Descuento
+                                            Réduction
                                         </td>
                                         <td className="px-6 py-3">
                                             -
@@ -104,14 +104,14 @@ const OrderDetails = ({ order }) => {
                                 )}
                                 <tr className="font-medium italic">
                                     <td className="px-6 py-3 ">
-                                        Impuestos ({order.tax_percent}%)
+                                        TVA ({order.tax_percent}%)
                                     </td>
                                     <td className="px-6 py-3">
                                         {formatCurrency(order.tax_amount)}
                                     </td>
                                 </tr>
                                 <tr className="font-medium italic">
-                                    <td className="px-6 py-3 ">Envio</td>
+                                    <td className="px-6 py-3 ">Expédition</td>
                                     <td className="px-6 py-3">
                                         {formatCurrency(order.shipping)}
                                     </td>

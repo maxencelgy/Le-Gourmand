@@ -2,13 +2,13 @@
 
     <x-create-data>
         <div>
-            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Crear') +' Producto'"></h3>
+            <h3 class="text-lg font-medium leading-6 " x-text="(edit ? 'Editer':'Créer') +' produit'"></h3>
         </div>
         <form x-ref="form_create" class="mt-3" wire:submit.prevent="save">
             <div class="grid grid-cols-12 gap-6">
 
                 <div class="col-span-3">
-                    <x-form-label class="block">Precio</x-form-label>
+                    <x-form-label class="block">Prix</x-form-label>
                     <x-form-input class="w-full mt-2" type="number" wire:model.defer="gift_card.price" />
                     @error('gift_card.price')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="col-span-12">
-                    <x-form-label class="block">Pequeña Descripcion</x-form-label>
+                    <x-form-label class="block">Petite Description</x-form-label>
                     <div>
                         <x-form-textarea wire:model.defer="gift_card.description_min" class="mt-2" rows="5">
                         </x-form-textarea>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Imagen Principal</x-form-label>
+                    <x-form-label class="block">Image Principal</x-form-label>
                     <div class="mt-2">
                         <x-form-input-file :temp="$img" :multiple="false" name="img" :saved="$gift_card->img" />
                         @error('img')

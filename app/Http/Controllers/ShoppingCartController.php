@@ -53,7 +53,7 @@ class ShoppingCartController extends Controller
         $count_product = $user->shopping_cart->count();
         if ($is_new_product && $count_product >= 10) {
             return Redirect::back()
-                ->withErrors(['limit' => 'El limite del carrito es de 10 productos']);
+                ->withErrors(['limit' => 'El limite del carrito es de 10 produits']);
         }
 
         if ($product->stock < $request->quantity) {

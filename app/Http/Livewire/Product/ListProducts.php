@@ -34,4 +34,4 @@ class ListProducts extends Component
         return view('livewire.product.list-products', compact('data', 'fields'));
     }
 }
-//crear Promociones
+//créer Promociones

@@ -34,7 +34,7 @@
 
                         <td class="px-6 py-3 whitespace-nowrap text-right text-sm font-medium">
                             <button class="font-medium text-indigo-600 hover:text-indigo-900"
-                                x-on:click="$dispatch('form-edit',{{ $item->id }})">Ver</button>
+                                x-on:click="$dispatch('form-edit',{{ $item->id }})">Voir</button>
 
 
                         </td>

@@ -1,7 +1,7 @@
 <div>
     <x-create-data>
         <div>
-            <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Edit catégorie':'Crear catégorie'">
+            <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Edit catégorie':'Créer catégorie'">
                 Créer une catégorie
             </h3>
         </div>

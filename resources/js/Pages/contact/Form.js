@@ -37,7 +37,7 @@ const Form = () => {
         //                 type="text"
         //                 name="name"
         //                 required
-        //                 placeholder="Tu nombre*"
+        //                 placeholder="Tu Nom*"
         //             />
         //             <input
         //                 value={dataForm.email}

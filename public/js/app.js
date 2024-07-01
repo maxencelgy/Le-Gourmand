@@ -3604,7 +3604,7 @@ function ValidationErrors(_ref) {
     className: "mb-4 text-red-600",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "font-medium",
-      children: "\xA1Ups! Algo sali\xF3 mal."
+      children: "Oops mauvais email ou mot de passe"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
       className: "mt-3 list-disc list-inside text-sm ",
       children: Object.keys(errors).map(function (key, index) {
@@ -5205,7 +5205,7 @@ function Login(_ref) {
   var status = _ref.status,
     canResetPassword = _ref.canResetPassword;
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.useForm)({
-      email: "user@user2.com",
+      email: "maxence",
       password: "password",
       remember: 1
     }),
@@ -6335,7 +6335,7 @@ var Form = function Form() {
   //                 type="text"
   //                 name="name"
   //                 required
-  //                 placeholder="Tu nombre*"
+  //                 placeholder="Tu Nom*"
   //             />
   //             <input
   //                 value={dataForm.email}
@@ -9465,7 +9465,7 @@ var OrderDetails = function OrderDetails(_ref) {
                 className: "font-medium italic",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
                   className: "px-6 py-3 ",
-                  children: "Descuento"
+                  children: "R\xE9duction"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("td", {
                   className: "px-6 py-3",
                   children: ["-", (0,_helpers_helpers__WEBPACK_IMPORTED_MODULE_1__.formatCurrency)(order.discount.applied)]
@@ -9474,7 +9474,7 @@ var OrderDetails = function OrderDetails(_ref) {
                 className: "font-medium italic",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("td", {
                   className: "px-6 py-3 ",
-                  children: ["Impuestos (", order.tax_percent, "%)"]
+                  children: ["TVA (", order.tax_percent, "%)"]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
                   className: "px-6 py-3",
                   children: (0,_helpers_helpers__WEBPACK_IMPORTED_MODULE_1__.formatCurrency)(order.tax_amount)
@@ -9483,7 +9483,7 @@ var OrderDetails = function OrderDetails(_ref) {
                 className: "font-medium italic",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
                   className: "px-6 py-3 ",
-                  children: "Envio"
+                  children: "Exp\xE9dition"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
                   className: "px-6 py-3",
                   children: (0,_helpers_helpers__WEBPACK_IMPORTED_MODULE_1__.formatCurrency)(order.shipping)
