@@ -19,8 +19,8 @@ class PromosResource extends JsonResource
             'title' => $this->title,
             'sub_title' => $this->sub_title,
             'img' => $this->img,
-            'product_url' => URL::route('product', [$this->product->slug]),
+//            'product_url' => URL::route('product', [$this->product->slug]),
         ];
     }
-    
+
 }

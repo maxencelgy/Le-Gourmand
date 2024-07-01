@@ -10089,11 +10089,11 @@ var ProductItem = function ProductItem(_ref) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "flex flex-col items-center flex-grow",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          src: "/storage/home/img-1.png",
+          src: "/storage/" + product.img,
           alt: product.img,
           className: "w-[150px] mb-4 max-h-full object-cover"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          className: "font-bold text-black text-center text-xl truncate px-6",
+          className: "font-bold flex text-black text-center text-xl  px-6 max-w-[150px] wrap mb-4 ",
           children: product.name
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           className: " font-light mb-4 text-sm text-center text-black line-clamp-2",

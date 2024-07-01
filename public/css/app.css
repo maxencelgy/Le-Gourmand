@@ -1241,6 +1241,18 @@ select {
 .max-w-3xl {
 	max-width: 48rem;
 }
+.max-w-\[2\] {
+	max-width: 2;
+}
+.max-w-\[50px\] {
+	max-width: 50px;
+}
+.max-w-\[150px\] {
+	max-width: 150px;
+}
+.max-w-\[250px\] {
+	max-width: 250px;
+}
 .flex-1 {
 	flex: 1 1 0%;
 }
@@ -2266,6 +2278,18 @@ select {
 }
 .ease-in {
 	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.line-clamp-1 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+}
+.\!line-clamp-1 {
+	overflow: hidden !important;
+	display: -webkit-box !important;
+	-webkit-box-orient: vertical !important;
+	-webkit-line-clamp: 1 !important;
 }
 .line-clamp-2 {
 	overflow: hidden;

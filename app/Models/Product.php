@@ -18,10 +18,10 @@ class Product extends Model
         'description_max',
         'img',
         'banner',
-        'stars',
         'price',
         'active',
         'stock',
+        'category_id'
 
     ];
     protected $casts = [

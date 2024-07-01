@@ -10,11 +10,11 @@ const ProductItem = ({product}) => {
                 className=" max-w-[280px] group hover:bg-yellow-500 duration-150  bg-[#F5F5F5] flex flex-col justify-between pt-6 pb-8 px-4 h-full  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div className="flex flex-col items-center flex-grow">
                     <img
-                        src={"/storage/home/img-1.png"}
+                        src={"/storage/" + product.img}
                         alt={product.img}
                         className="w-[150px] mb-4 max-h-full object-cover"
                     />
-                    <h2 className="font-bold text-black text-center text-xl truncate px-6">{product.name}</h2>
+                    <h2 className="font-bold flex text-black text-center text-xl  px-6 max-w-[150px] wrap mb-4 ">{product.name}</h2>
                     <p className=" font-light mb-4 text-sm text-center text-black line-clamp-2">
                         {product.description_min}
                     </p>
