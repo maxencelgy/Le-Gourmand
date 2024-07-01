@@ -4098,7 +4098,7 @@ var Navbar = function Navbar() {
             href: route("shopping-cart.index"),
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
               className: "relative",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              children: [auth.user.cartCount > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                 className: "absolute inline-flex  justify-center w-5 h-5 text-xs font-bold text-white bg-purple-500 border-2 border-white rounded-full top-0 right-4",
                 children: auth.user.cartCount
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("svg", {

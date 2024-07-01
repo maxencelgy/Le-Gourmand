@@ -23,6 +23,7 @@ class PageController extends Controller
 
         $products_featured  = Product::inRandomOrder()->take(8)->whereHas('category', function (Builder $query) {
             $query->where('type', 'menu');
+            $query->where('id',  13);
         })->get();
 
         $page = Page::where('type', 'home')->with(['promos' => function ($query) {

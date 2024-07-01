@@ -50,12 +50,16 @@ const Navbar = () => {
                         <>
                             <Link href={route("shopping-cart.index")}>
                                 <div className="relative">
+                                    {auth.user.cartCount > 0 && (
+
                                     <div
                                         className="absolute inline-flex  justify-center w-5 h-5 text-xs font-bold text-white bg-purple-500 border-2 border-white rounded-full top-0 right-4">
 
                                         {auth.user.cartCount}
 
                                     </div>
+                                    )}
+
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                          viewBox="0 0 128 128">
                                         <path fill="#65878d"
@@ -70,7 +74,6 @@ const Navbar = () => {
                                         <circle cx="118.59" cy="16.25" r="7.41" fill="#65878d"/>
                                     </svg>
                                 </div>
-
                             </Link>
                             <ProfileDropdown user={auth.user}/>
                         </>
