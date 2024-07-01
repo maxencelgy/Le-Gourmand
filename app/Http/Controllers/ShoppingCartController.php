@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ProductResource;
+use App\Models\Category;
 use App\Models\DiscountCode;
 use App\Models\Product;
 use App\Models\User;
@@ -22,9 +23,10 @@ class ShoppingCartController extends Controller
     public function index()
     {
         $user = Auth::user(); //auth()->user()->with('shopping_cart');
-
+        $boissons = Product::where('category_id', Category::where('slug', 'boissons')->first()->id)->get();
         return Inertia::render('shopping_cart/ShoppingCart', [
             'products' => ProductResource::collection($user->shopping_cart),
+            'boissons' => $boissons,
             'meta' => $user->shopping_cart_total
         ]);
     }
@@ -83,10 +85,11 @@ class ShoppingCartController extends Controller
     public function destroy(Request $request, $id)
     {
 
+
         $user = auth()->user(); //auth()->user()->with('shopping_cart');
         $user->shopping_cart()->detach($id);
 
-        return Redirect::route('shopping-cart.index');
+        return Redirect::back();
     }
 
     /**

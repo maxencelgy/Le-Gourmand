@@ -34,10 +34,13 @@ class RecupBurger extends Command
      */
     public function handle()
     {
-        Product::truncate();
+//        Product::truncate();
+
+
         $produits = [];
         $apiBk = Http::get('https://webapi.burgerking.fr/blossom/api/v13/public/carte/burgers')->json();
-
+//        $apiBk = Http::get('https://webapi.burgerking.fr/blossom/api/v13/public/carte/boissons')->json();
+//
         foreach ($apiBk['products'] as $product) {
             $single = Http::get('https://webapi.burgerking.fr/blossom/api/v13/public' . $product['productId'])->json();
             $allergens = [];
@@ -67,7 +70,7 @@ class RecupBurger extends Command
             }
 
             $imageContents = $imageResponse->body();
-            $imageName = $key . '.jpg'; // Generate a random name for the image
+            $imageName =  Str::slug($product['title']) . '.jpg'; // Generate a random name for the image
 
             // Ensure the destination directory exists
             Storage::makeDirectory('images');

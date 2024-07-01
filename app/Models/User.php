@@ -27,6 +27,8 @@ class User extends Authenticatable
         'active',
         'password',
     ];
+    protected $appends = ['cartCount'];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -69,6 +71,10 @@ class User extends Authenticatable
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function getCartCountAttribute(){
+        return $this->shopping_cart->sum('pivot.quantity');
     }
 
     public function getShoppingCartTotalAttribute()

@@ -18,8 +18,14 @@ const CartItem = ({ product }) => {
         removeProductToCart.delete(
             route("shopping-cart.destroy", { id: product.id }),
             { preserveScroll: true }
-        );
+        ).then(() => {
+            // Handle success if needed
+        }).catch((error) => {
+            console.error('Error removing item:', error);
+            // Optionally, update state or show error message
+        });
     };
+
 
     const init = useRef(false);
     useEffect(() => {

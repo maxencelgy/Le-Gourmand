@@ -29,7 +29,7 @@ const Feature = ({product}) => {
                 </span>
             </div>
 
-            <p className="font-light text-lg">{product.descripction_min}</p>
+            <p className="font-light text-lg">{product.description_min}</p>
 
             <div className="divide-y divide-gray-200">
                 {product.portion_size && (
@@ -45,8 +45,8 @@ const Feature = ({product}) => {
                     </div>
                 )}
                 {product.allergies && (
-                    <div className="flex items-center justify-between py-3">
-                        <div className="font-bold">Allergènes</div>
+                    <div className="flex items-top  justify-between py-3">
+                        <div className="font-bold mr-4">Allergènes</div>
                         <div>{product.allergies}</div>
                     </div>
                 )}

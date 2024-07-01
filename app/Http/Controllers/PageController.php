@@ -38,7 +38,7 @@ class PageController extends Controller
     }
     public function menu()
     {
-        $menus = Category::with('products')->where('type', 'menu')->get();
+        $menus = Category::with('products')->where('type', 'menu')->orderBy('id')->get();
         $page = Page::where('type', 'menu')->with('promos')->first();
 
         return Inertia::render('menu/Menu', [
