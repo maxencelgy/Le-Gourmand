@@ -52,8 +52,8 @@ const Feature = ({product}) => {
                 )}
             </div>
             <form onSubmit={submit}>
-                <div className="md:flex md:items-center md:justify-between">
-                    <div>
+                <div className="md:flex md:items-center flex flex-col justify-center md:justify-between">
+                    <div className="text-center">
                         <SelectQuantity
                             quantity={data.quantity}
                             stock={product.stock}
@@ -61,8 +61,9 @@ const Feature = ({product}) => {
                         />
                     </div>
 
+                    <br/>
                     <button
-                        className="flex items-center hover:bg-purple-500 hover:text-white duration-300 shadow-lg hover:cursor-pointer  bg-yellow-500 px-6 py-2 text-purple-500 rounded-xl "
+                        className="  flex justify-center items-center hover:bg-purple-500 hover:text-white duration-300 shadow-lg hover:cursor-pointer  bg-yellow-500 px-6 py-2 text-purple-500 rounded-xl "
                         disabled={processing}
                     >
                         {processing && (

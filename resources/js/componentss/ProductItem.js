@@ -7,7 +7,7 @@ const ProductItem = ({product}) => {
     return (
         <Link href={route('product', {slug: product.slug})}>
             <div
-                className=" max-w-[280px] group hover:bg-yellow-500 duration-150  bg-[#F5F5F5] flex flex-col justify-between pt-6 pb-8 px-4 h-full  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                className="product max-w-[280px] group hover:bg-yellow-500 duration-150  bg-[#F5F5F5] flex flex-col justify-between pt-4 pb-8 px-4 h-full  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div className="flex flex-col items-center flex-grow">
                     <img
                         src={"/storage/" + product.img}

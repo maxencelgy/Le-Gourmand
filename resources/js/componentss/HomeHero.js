@@ -1,14 +1,13 @@
-import Button from "@/Components/Button";
 import LinkBtn from "@/Components/LinkBtn";
 
 const HomeHero = () => {
     return (
         <div className=" overflow-x-hidden ">
             <div className=" pt-20 pb-20 lg:pt-36 lg:pb-32 relative ">
-                <div className=" text-center text-white  ">
-                    <div className="text-sm  font-bold uppercase leading-none"></div>
-                    <div className="flex items-center justify-between wrap ">
-                        <div className="w-[44%] text-left  pt-32">
+                <div className=" text-center text-white container  ">
+                    <div className=" text-sm  font-bold uppercase leading-none"></div>
+                    <div className=" flex items-center justify-between wrap">
+                        <div className="w-[44%] text-left  pt-32 left">
                             <div className="leading-none relative">
                                 <div className="absolute  top-[-7.6rem] left-[3.5rem]">
                                     <img src={'/storage/home/goutte.png'}
@@ -27,7 +26,7 @@ const HomeHero = () => {
                             <LinkBtn href="/menu">Commander</LinkBtn>
 
                         </div>
-                        <div className="w-[44%] relative">
+                        <div className="w-[44%] relative right">
                             <img src={'/storage/home/burger-Photoroom.png'}
                                  className="top-[-350px] left-[-190px] absolute max-w-[155%]" alt=""/>
                         </div>
@@ -41,5 +40,6 @@ const HomeHero = () => {
         </div>
     )
 }
+
 
 export default HomeHero

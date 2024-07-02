@@ -9,7 +9,7 @@ const Services = () => {
 
             <br/><br/>
 
-            <div className="flex  items-top justify-between gap-4">
+            <div className="flex items-top justify-between gap-4  service">
                 <div className="w-[68%] text-black">
                     <h2 className="font-title text-4xl mb-8">Retrait de votre commande </h2>
                     <p className="font-normal mb-6"> Nous sommes ravis de vous offrir un

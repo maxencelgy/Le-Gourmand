@@ -6,7 +6,7 @@
     </x-slot>
     <div>
 
-        <x-list-data text-button='Agregar Usuario' :data="$data" :fields="$fields">
+        <x-list-data text-button='Ajouter un utilisateur' :data="$data" :fields="$fields">
             <x-slot name="table_data">
                 @foreach ($data as $user)
                     <tr>

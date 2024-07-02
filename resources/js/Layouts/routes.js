@@ -4,7 +4,7 @@
 
 const routes = {
     home: {
-        name: "Inicio",
+        name: "Accueil",
     },
     menu: {
         name: "Carte",

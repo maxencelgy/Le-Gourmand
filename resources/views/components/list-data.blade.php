@@ -7,7 +7,7 @@
         <div class="flex justify-between mb-2">
             <div class="flex  items-center">
                 <x-form-input type="text" wire:model.debounce.500ms="search" class="mr-4 text-sm"
-                    placeholder="Buscador">
+                    placeholder="Rechercher">
                 </x-form-input>
                 <div wire:loading wire:target="search">
                     <x-spinner-loading class="h-6 w-6 text-gray-400" />

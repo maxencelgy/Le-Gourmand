@@ -124,11 +124,12 @@ class PageController extends Controller
     {
         $product = Product::where('slug', $product_slug)->with('images')->firstOrFail();
 
-        $related_products = Product::where('category_id', $product->category_id)->get();
+        $related_products = Product::where('category_id', $product->category_id)->take(4)->get();
 
         return Inertia::render('product/Product', [
             "product" => new ProductResource($product),
-            "related_products" => ProductResource::collection($related_products)
+            // prendre seuelemnt 4 produits
+            "related_products" => ProductResource::collection($related_products),
         ]);
     }
 

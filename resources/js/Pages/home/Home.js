@@ -4,7 +4,7 @@ import HomeHero from "../../componentss/HomeHero";
 import Frites from "@/Pages/home/Frites";
 import Services from "@/Pages/home/Services";
 import LinkBtn from "@/Components/LinkBtn";
-import {useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import TitleSection from "@/Components/TitleSection";
 import Team from "@/Pages/team/Team";
 import people from "@/Pages/team/people.json";
@@ -13,7 +13,28 @@ import Where from "@/Pages/home/Where";
 import CardLocation from "@/Pages/location/CardLocation";
 
 const Home = (props) => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [productCount, setProductCount] = useState(8);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (windowWidth < 768) {
+            setProductCount(3);
+        } else {
+            setProductCount(8);
+        }
+    }, [windowWidth]);
     return (
         <AppLayout title="Début">
             <HomeHero/>
@@ -26,7 +47,7 @@ const Home = (props) => {
                     <TitleSection title="Nos burgers"/>
 
                     <div className="mb-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-4 lg:mt-4">
-                        {props.products_featured.data.map((product) => (
+                        {props.products_featured.data.slice(0, productCount).map((product) => (
                             <ProductItem product={product} key={product.id}/>
                         ))}
                     </div>
@@ -35,12 +56,12 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="bg-purple-500" >
+            <div className="bg-purple-500">
                 <TitleSection title="Notre equipe"/>
-                <div className="container pb-16" >
+                <div className="container pb-16">
                     <div
                         className="text-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-6 ">
-                        {people.slice(0, 5).map((person) => (
+                    {people.slice(0, 5).map((person) => (
                             <TeamItem person={person}/>
                         ))}
                     </div>
