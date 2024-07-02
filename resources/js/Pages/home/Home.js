@@ -56,21 +56,27 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="bg-purple-500">
+
+            <div className="bg-purple-600">
+
                 <TitleSection title="Notre equipe"/>
-                <div className="container pb-16">
+                <div className="container  pb-16">
                     <div
                         className="text-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-6 ">
-                    {people.slice(0, 5).map((person) => (
+                        {people.slice(0, 5).map((person) => (
                             <TeamItem person={person}/>
                         ))}
                     </div>
                 </div>
-                <div id="equipe"    ></div>
+
+                <div id="equipe"></div>
 
             </div>
+
             <Services/>
-            <div className=" pt-4 pb-20" >
+
+
+            <div className=" pt-4 pb-20">
                 <CardLocation
                     title="ROUEN"
                     className="w-full"
@@ -79,9 +85,9 @@ const Home = (props) => {
                 />
 
             </div>
-<div id="ou"></div>
+            <div id="ou"></div>
         </AppLayout>
-)
+    )
 }
 
 export default Home

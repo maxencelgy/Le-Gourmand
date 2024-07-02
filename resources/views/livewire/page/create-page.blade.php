@@ -6,7 +6,7 @@
             <div class="grid grid-cols-12 gap-6 mt-3">
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Titulo</x-form-label>
+                    <x-form-label class="block">Titre</x-form-label>
                     <div>
                         <x-form-input class="w-full" type="text" wire:model.defer="page.title" />
                         @error('page.title')<span class="error error-input">{{ $message }}</span>@enderror

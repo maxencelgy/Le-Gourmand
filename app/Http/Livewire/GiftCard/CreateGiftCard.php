@@ -49,10 +49,11 @@ class CreateGiftCard extends Component
         $this->validate();
         $gift_card = $this->gift_card;
         $gift_card->slug = Str::slug('gift_card_' . $gift_card->price);
-        $category_id = Category::where('type', 'gift_card')->first()->id;
+        $category_id = Category::where('id', 22)->first()->id;
         $gift_card->category()->associate($category_id);
         $gift_card->img = $this->path . '/' . $gift_card->slug . '-img'  . '.' . $this->img->extension();
         $gift_card->banner = $this->path . '/' . $gift_card->slug . '-banner'  . '.' . $this->banner->extension();
+        $gift_card->description_max = '';
         $gift_card->save();
 
         Helpers::image_upload($this->img, $gift_card->img, true);

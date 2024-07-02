@@ -1938,6 +1938,9 @@ select {
 .pb-24 {
 	padding-bottom: 6rem;
 }
+.pt-16 {
+	padding-top: 4rem;
+}
 .text-left {
 	text-align: left;
 }
@@ -3282,6 +3285,26 @@ nav .nav-link-item {
 		height: 24rem;
 	}
 
+	.md\:h-\[8rem\] {
+		height: 8rem;
+	}
+
+	.md\:h-\[18rem\] {
+		height: 18rem;
+	}
+
+	.md\:h-\[28rem\] {
+		height: 28rem;
+	}
+
+	.md\:h-\[10rem\] {
+		height: 10rem;
+	}
+
+	.md\:h-\[14rem\] {
+		height: 14rem;
+	}
+
 	.md\:max-h-64 {
 		max-height: 16rem;
 	}
@@ -3381,6 +3404,12 @@ nav .nav-link-item {
 
 	.md\:gap-y-8 {
 		row-gap: 2rem;
+	}
+
+	.md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-y-reverse: 0;
+		margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+		margin-bottom: calc(0px * var(--tw-space-y-reverse));
 	}
 
 	.md\:divide-none > :not([hidden]) ~ :not([hidden]) {

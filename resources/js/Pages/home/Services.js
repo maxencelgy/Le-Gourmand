@@ -4,7 +4,7 @@ import TitleSection from "@/Components/TitleSection";
 const Services = () => {
     return (
         <div className="wrap pt-4 pb-20">
-            <TitleSection title="Notre service"/>
+            {/*<TitleSection title="Notre service"/>*/}
 
 
             <br/><br/>

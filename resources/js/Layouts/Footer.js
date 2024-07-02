@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/inertia-react"; // Assuming you have a routes f
 const Footer = () => {
     return (
         <div className="py-content border-t border-gray-200 bg-black text-white">
-            <div className="container mx-auto flex flex-col items-center lg:flex-row lg:justify-center lg:items-start lg:space-x-8 pb-8">
+            <div className="container mx-auto flex flex-col items-center space-y-4 md:space-y-0 lg:flex-row lg:justify-center lg:items-start lg:space-x-8 pb-8">
                 <div className="flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
                     <h3 className="text-2xl font-title font-bold">NOTRE CARTE</h3>
                     <Link href={route("menu")} className="text-lg hover:text-yellow-500">Voir la carte</Link>

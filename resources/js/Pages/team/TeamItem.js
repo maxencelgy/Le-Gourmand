@@ -1,7 +1,7 @@
 const TeamItem = ({person}) => {
     return (
         <div className="flex flex-col items-center md:items-bottom">
-            <div className="overflow-hidden rounded-md w-full max-w-xs md:max-w-none">
+            <div className="overflow-hidden rounded-md w-full  md:max-w-none">
                 <img src={person.img}
                      className="transition duration-500 transform hover:scale-110 hover:brightness-75 max-h-32 md:max-h-64 md:h-42 w-full object-cover object-center rounded-md"
                      alt={person.img}/>

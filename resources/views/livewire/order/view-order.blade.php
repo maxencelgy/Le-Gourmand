@@ -7,7 +7,7 @@
             @if ($order->state != 'refunded')
                 <a href="#" class="font-medium text-red-600 hover:text-red-900 ml-3 " x-on:click="
             $dispatch('open-modal-confirmation-delete',{{ $order->id }})">
-                    {{ $order->state != 'réussi' ? 'Remboursement' : 'Annuler' }} orden
+                    {{ $order->state != 'réussi' ? 'Remboursement' : 'Annuler' }} Commande
                 </a>
             @endif
         </div>

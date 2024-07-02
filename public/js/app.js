@@ -3851,7 +3851,7 @@ var Footer = function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "py-content border-t border-gray-200 bg-black text-white",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "container mx-auto flex flex-col items-center lg:flex-row lg:justify-center lg:items-start lg:space-x-8 pb-8",
+      className: "container mx-auto flex flex-col items-center space-y-4 md:space-y-0 lg:flex-row lg:justify-center lg:items-start lg:space-x-8 pb-8",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
@@ -7100,11 +7100,11 @@ var Home = function Home(props) {
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
-      className: "bg-purple-500",
+      className: "bg-purple-600",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         title: "Notre equipe"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
-        className: "container pb-16",
+        className: "container  pb-16",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "text-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-6 ",
           children: _Pages_team_people_json__WEBPACK_IMPORTED_MODULE_9__.slice(0, 5).map(function (person) {
@@ -7295,9 +7295,7 @@ __webpack_require__.r(__webpack_exports__);
 var Services = function Services() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "wrap pt-4 pb-20",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_TitleSection__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: "Notre service"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "flex items-top justify-between gap-4  service",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "w-[68%] text-black",
@@ -9486,7 +9484,7 @@ __webpack_require__.r(__webpack_exports__);
 var OrderDetails = function OrderDetails(_ref) {
   var order = _ref.order;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "Orden " + order.order,
+    title: "Commande " + order.order,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_componentss_BannerHero__WEBPACK_IMPORTED_MODULE_0__["default"], {
       title: "Detalles de pedido",
       img: "order/banner.jpg"
@@ -9496,14 +9494,14 @@ var OrderDetails = function OrderDetails(_ref) {
         className: "py-content max-w-3xl mx-auto space-y-7",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h2", {
           className: "font-primary text-4xl text-red-500",
-          children: ["Orden: #", order.order]
+          children: ["Commande: #", order.order]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "flex flex-wrap item-stretch sm:divide-x divide-gray-200 sm:space-y-0 ",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "w-1/2 md:w-auto md:pr-5 mb-2 md:mb-0",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
               className: " uppercase text-sm ",
-              children: "numero de orden"
+              children: "numero de Commande"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: " font-semibold ",
               children: "#" + order.order
@@ -9547,7 +9545,7 @@ var OrderDetails = function OrderDetails(_ref) {
                   children: "Pedido"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
                   className: "px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider",
-                  children: "Monto"
+                  children: "Montant"
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tbody", {
@@ -9832,7 +9830,7 @@ var TeamItem = function TeamItem(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "flex flex-col items-center md:items-bottom",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "overflow-hidden rounded-md w-full max-w-xs md:max-w-none",
+      className: "overflow-hidden rounded-md w-full  md:max-w-none",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
         src: person.img,
         className: "transition duration-500 transform hover:scale-110 hover:brightness-75 max-h-32 md:max-h-64 md:h-42 w-full object-cover object-center rounded-md",

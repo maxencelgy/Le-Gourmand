@@ -8,7 +8,7 @@
             <div class="grid grid-cols-12 gap-6">
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Titulo</x-form-label>
+                    <x-form-label class="block">Titre</x-form-label>
                     <div>
                         <x-form-input class="w-full" type="text" wire:model.defer="promo.title" />
                         <x-form-input-error for="promo.title"  />
@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Subtitulo</x-form-label>
+                    <x-form-label class="block">SubTitre</x-form-label>
                     <div>
                         <x-form-input class="w-full" type="text" wire:model.defer="promo.sub_title" />
                         <x-form-input-error for="promo.sub_title"  />
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="col-span-6">
-                    <x-form-label class="block">Paginas</x-form-label>
+                    <x-form-label class="block">Page</x-form-label>
                     <div class="grid grid-cols-4 gap-2 ">
                         @foreach ($pages as $index => $page)
                             <div class="flex items-center">

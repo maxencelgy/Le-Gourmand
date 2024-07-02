@@ -6,7 +6,7 @@ import AppLayout from "../../Layouts/AppLayout";
 
 const OrderDetails = ({ order }) => {
     return (
-        <AppLayout title={"Orden " + order.order}>
+        <AppLayout title={"Commande " + order.order}>
             <BannerHero title="Detalles de pedido" img="order/banner.jpg" />
             <div className="container ">
                 <div className="py-content max-w-3xl mx-auto space-y-7">
@@ -14,23 +14,23 @@ const OrderDetails = ({ order }) => {
                         <CheckCircleIcon className="h-5 w-5 text-green-400" />
                         <div className="text-green-700">
                             <span className="font-semibold block text-green-700">
-                                Orden completada
+                                Commande completada
                             </span>
                             <span className="text-green-600">
-                                Gracias. Tu orden ha sido recibida .Todo los
+                                Gracias. Tu Commande ha sido recibida .Todo los
                                 datos han sido enviados a tu correo
                             </span>
                         </div>
                     </div> */}
 
                     <h2 className="font-primary text-4xl text-red-500">
-                        Orden: #{order.order}
+                        Commande: #{order.order}
                     </h2>
 
                     <div className="flex flex-wrap item-stretch sm:divide-x divide-gray-200 sm:space-y-0 ">
                         <div className="w-1/2 md:w-auto md:pr-5 mb-2 md:mb-0">
                             <span className=" uppercase text-sm ">
-                                numero de orden
+                                numero de Commande
                             </span>
                             <div className=" font-semibold ">
                                 {"#" + order.order}
@@ -65,7 +65,7 @@ const OrderDetails = ({ order }) => {
                                         Pedido
                                     </th>
                                     <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
-                                        Monto
+                                        Montant
                                     </th>
                                 </tr>
                             </thead>

@@ -30,8 +30,8 @@
                     <x-form-label class="block">Type</x-form-label>
                     <x-form-select name="menu" wire:model.defer="discount_code.type">
                         <option selected>Selecione Type de Valeur</option>
-                        <option value="percent">Porcentaje</option>
-                        <option value="amount">Monto</option>
+                        <option value="percent">Pourcentage</option>
+                        <option value="amount">Montant</option>
                     </x-form-select>
                     @error('category_id')<span class="error error-input">{{ $message }}</span>@enderror
                 </div>

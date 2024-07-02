@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-bold text-xl text-gray-800 leading-tight">
-            {{ __('Paginas') }}
+            {{ __('Page') }}
         </h2>
     </x-slot>
     <div>
@@ -22,6 +22,9 @@
                             </div>
                         </td>
 
+                        <td class="px-6 py-3 ">
+                            {{ \Illuminate\Support\Str::slug($item->title) }}
+                        </td>
                         <td class="px-6 py-3 ">
                             <img class="w-32 rounded-lg" src="/storage/{{ $item->banner }}">
                         </td>

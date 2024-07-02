@@ -102,5 +102,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 require __DIR__ . '/auth.php';
 
-//mejorar lista order agregar badge al estado de la orden
+//mejorar lista order agregar badge al estado de la Commande
 //terminar change password
