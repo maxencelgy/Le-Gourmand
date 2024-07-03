@@ -33,9 +33,9 @@ class CreateProduct extends Component
         'product.price' => 'required|numeric',
         'product.active' => 'required|boolean',
         'product.stock' => 'required|integer',
-        'img' => 'nullable|image|max:1024|mimes:jpeg,jpg,png',
-        'banner' => 'nullable|image|max:1024|mimes:jpeg,jpg,png',
-        'images.*' => 'nullable|image|max:1024|mimes:jpeg,jpg,png',
+        'img' => 'nullable|image|max:4096|mimes:jpeg,jpg,png',
+        'banner' => 'nullable|image|max:4096|mimes:jpeg,jpg,png',
+        'images.*' => 'nullable|image|max:4096|mimes:jpeg,jpg,png',
         'category_id' => 'required|exists:categories,id'
     ];
     protected $path = 'products';
