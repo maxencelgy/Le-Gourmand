@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as ImageManager;
 
 class Helpers
-{  
+{
 
     public static function format_price($price = 0)
     {
@@ -21,16 +21,16 @@ class Helpers
     }
     public static function image_upload(object $img, string $name,  bool $thumbnail = false)
     {
-        //SAVE IMG       
+        //SAVE IMG
         $img_save = ImageManager::make($img)->widen(1920, function ($constraint) {
             $constraint->upsize();
         })->limitColors(255)->encode();
-        Storage::put($name, (string) $img_save);
+        Storage::put('/public/' . $name, (string) $img_save);
 
         //SAVE IMG thumbnail
         if ($thumbnail) {
             $img_thumbnail = ImageManager::make($img)->widen(300)->limitColors(255)->encode();
-            Storage::put('/thumbnail/' . $name, (string) $img_thumbnail);
+            Storage::put('/public/thumbnail/' . $name, (string) $img_thumbnail);
         }
     }
     public static function images_store(array $images, string $path_name,$thumbnail = false)
@@ -45,14 +45,14 @@ class Helpers
         return $array_images;
     }
     public static function delete_images_all($model){
-        
-        if ($model->images->isNotEmpty()) {  //isNotEmpty  -> no esta vacio 
+
+        if ($model->images->isNotEmpty()) {  //isNotEmpty  -> no esta vacio
             $images_delete = [];
             foreach ($model->images as  $img) {
                 array_push($images_delete, $img->image);
                 array_push($images_delete, 'thumbnail/' . $img->image);
             }
-            Storage::delete($images_delete);            
+            Storage::delete($images_delete);
         }
     }
 }

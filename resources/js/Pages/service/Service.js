@@ -10,7 +10,7 @@ const Service = (props) => {
                 title={props.page.title}
                 breadcrumb="Notre Service"
             />
-            <div className="container pb-24">
+            <div className="container pt-20 pb-24">
                 <div className="mb-16">
                     <h2 className="text-3xl font-title font-bold text-center my-8">Retrait de votre commande en moins de 30 minutes</h2>
                     <p className="text-center">

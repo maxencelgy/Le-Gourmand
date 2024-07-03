@@ -15,12 +15,12 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/dashboard.css') }}">
+    <link rel="stylesheet" href="/css/dashboard.css">
 
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/dashboard.js') }}" defer></script>
+    <script src="/js/dashboard.js" defer></script>
 </head>
 
 <body class="font-sans antialiased bg-gray-100">

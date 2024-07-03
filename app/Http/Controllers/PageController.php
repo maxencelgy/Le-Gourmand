@@ -47,6 +47,7 @@ class PageController extends Controller
             "page" => $page,
         ]);
     }
+
     public function service()
     {
         $page = Page::where('type', 'service')->first();

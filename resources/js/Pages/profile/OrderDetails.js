@@ -5,7 +5,7 @@ import MyAccount from "./MyAccount";
 
 const orderDetails = ({ order }) => {
     return (
-        <MyAccount active="orders" title={"Ordre: #" + order.order}>
+        <MyAccount active="orders" title={"Commande: #" + order.order}>
             <div className="space-y-2">
                 <div className="flex items-center">
                     <span className="font-semibold mr-2">Téléphone:</span>

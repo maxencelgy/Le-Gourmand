@@ -63,8 +63,8 @@ class CreateProduct extends Component
         $product = $this->product;
         $product->slug = Str::slug($product->slug);
         $product->category()->associate($this->category_id);
-        $product->img = $this->path . '/' . $product->slug . '-img'  . '.' . $this->img->extension();
-        $product->banner = $this->path . '/' . $product->slug . '-banner'  . '.' . $this->banner->extension();
+        $product->img = 'images/' . $product->slug . '-img'  . '.' . $this->img->extension();
+        $product->banner = 'images/' . $product->slug . '-banner'  . '.' . $this->banner->extension();
         $product->save();
 
         Helpers::image_upload($this->img, $product->img, true);
@@ -105,13 +105,16 @@ class CreateProduct extends Component
         if ($this->img) {
             //Storage::delete('thumbnail/' . $product->img);
             //Storage::delete($product->img);
-            $product->img = $this->path . '/' . $product->slug . '-img'  . '.' . $this->img->extension();
+            $product->img =   'images/' . $product->slug . '-img'  . '.' . $this->img->extension();
+            $product->save();
             Helpers::image_upload($this->img, $product->img, true);
         }
 
         if ($this->banner) {
             //Storage::delete($product->banner);
-            $product->banner = $this->path . '/' . $product->slug . '-banner'  . '.' . $this->banner->extension();
+            $product->banner = 'images/' . $product->slug . '-banner'  . '.' . $this->banner->extension();
+            $product->save();
+
             Helpers::image_upload($this->banner, $product->banner);
         }
 

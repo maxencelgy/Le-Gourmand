@@ -11,8 +11,8 @@ import { LinkAuthenticationElement } from "@stripe/react-stripe-js";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: "maxence",
-        password: "password",
+        email: "",
+        password: "",
         remember: 1,
     });
 
@@ -56,7 +56,6 @@ export default function Login({ status, canResetPassword }) {
                     <Input
                         type="text"
                         name="email"
-                        value={data.email}
                         className="mt-1 block w-full"
                         autoComplete="username"
                         isFocused={true}
@@ -70,7 +69,6 @@ export default function Login({ status, canResetPassword }) {
                     <Input
                         type="password"
                         name="password"
-                        value={data.password}
                         className="mt-1 block w-full"
                         autoComplete="current-password"
                         handleChange={onHandleChange}

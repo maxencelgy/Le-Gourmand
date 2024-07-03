@@ -13,7 +13,7 @@
                 </div>
                 <div wire:loading.class="invisible" wire:target="create, edit">
                     <div>
-                        <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Editer usuario':'Créer Usuario'">Créer
+                        <h3 class="text-lg font-medium leading-6 " x-text="edit ? 'Editer utilisateur':'Créer Usuario'">Créer
                             Usuario
                         </h3>
                     </div>
@@ -142,7 +142,7 @@
                 </x-slot>
 
                 <x-slot name="content">
-                    ¿Estás seguro de que deseas eliminar este usuario?
+                    ¿Estás seguro de que deseas eliminar este utilisateur?
                 </x-slot>
 
                 <x-slot name="footer">

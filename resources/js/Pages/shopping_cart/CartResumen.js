@@ -69,17 +69,17 @@ const CartResumen = ({ meta }) => {
                 </div>
 
             </div>
-            <form onSubmit={handleSubmitDiscount} className="flex mt-5">
+            <form onSubmit={handleSubmitDiscount} className="flex mt-5 wrap">
                 <input
                     onChange={(e) =>
                         applyDiscount.setData("code", e.target.value)
                     }
                     type="text"
-                    className="flex-grow"
+                    className="flex-grow mt-4 mb-8"
                 />
                 <button
                     disabled={applyDiscount.processing}
-                    className="btn px-5 py-3 bg-yellow-500 text-white ml-3 disabled:opacity-50 "
+                    className="btn px-5 w-full py-3 bg-yellow-500 text-white mt-4 ml-0 md:ml-3 disabled:opacity-50 "
                 >
                     {applyDiscount.processing
                         ? "Mise en charge...."

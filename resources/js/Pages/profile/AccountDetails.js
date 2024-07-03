@@ -81,7 +81,7 @@ const AccountDetails = (props) => {
                         />
                     </div>
                     <div className="md:col-span-2">
-                        <Label forInput="address" value="Addresse *" />
+                        <Label forInput="address" value="Adresse *" />
                         <Input
                             className="w-full mt-1"
                             required={true}
