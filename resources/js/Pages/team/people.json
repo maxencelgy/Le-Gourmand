@@ -1,32 +1,32 @@
 [
     {
-        "name": "SAM RICHARDSON",
-        "job": "Head chef",
+        "name": "GORDON RAMSAY",
+        "job": "Sous Chef",
         "img": "/storage/team/img-1.jpg"
     },
     {
-        "name": "JENNIFER HARPER",
-        "job": "Sous Chef",
+        "name": "Mauro COLAGRECO",
+        "job": "Commis Chef",
         "img": "/storage/team/img-2.jpg"
     },
     {
-        "name": "JONATHAN CORONADO",
-        "job": "Head chef",
+        "name": "Philippe Etchebest",
+        "job": "Chef de cuisine",
         "img": "/storage/team/img-3.jpg"
     },
     {
-        "name": "JONATHAN CORONADO",
-        "job": "Head chef",
+        "name": "Christophe BACQUIE",
+        "job": "Chef de partie",
         "img": "/storage/team/img-5.jpg"
     },
     {
-        "name": "SAM RICHARDSON",
-        "job": "Head chef",
+        "name": "Arnaud DONCKELE",
+        "job": "Sous Chef",
         "img": "/storage/team/img-4.jpg"
     },
     {
-        "name": "JENNIFER HARPER",
-        "job": "Sous Chef",
+        "name": "Laurent PETIT",
+        "job": "C   uisinier",
         "img": "/storage/team/img-6.jpg"
     },
     {
