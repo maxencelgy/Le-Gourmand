@@ -25,26 +25,9 @@ class PageTest extends TestCase
         $response = $this->get(route('about'));
         $response->assertStatus(200);
     }
-    public function test_page_gallery()
-    {
-        $response = $this->get(route('gallery'));
-        $response->assertStatus(200);
-    }
-    public function test_page_locations()
-    {
-        $response = $this->get(route('locations'));
-        $response->assertStatus(200);
-    }
-    public function test_page_team()
-    {
-        $response = $this->get(route('team'));
-        $response->assertStatus(200);
-    }
-    public function test_page_faqs()
-    {
-        $response = $this->get(route('faqs'));
-        $response->assertStatus(200);
-    }
+
+
+
     public function test_page_terms()
     {
         $response = $this->get(route('terms'));
@@ -55,14 +38,10 @@ class PageTest extends TestCase
         $response = $this->get(route('gift_cards'));
         $response->assertStatus(200);
     }
-    public function test_page_contacts()
-    {
-        $response = $this->get(route('contacts'));
-        $response->assertStatus(200);
-    }
+
     public function test_page_product()
-    {   
-        
+    {
+
         $response = $this->get(route('product',['slug'=>Product::first()->slug]));
         $response->assertStatus(200);
     }

@@ -56,6 +56,7 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
+            <div id="equipe"></div>
 
             <div className="bg-purple-600">
 
@@ -69,7 +70,6 @@ const Home = (props) => {
                     </div>
                 </div>
 
-                <div id="equipe"></div>
 
             </div>
 

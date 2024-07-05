@@ -52,7 +52,6 @@ class UserSeeder extends Seeder
                             'order' => rand(1000, 9999) . date('md') . $user->id,
                             'tax_percent' => 12,
                             'tax_amount' => $tax_amount,
-                            'shipping' => 12,
                             'sub_total' => $sub_total,
                             'total' => $sub_total,
                             'stripe_id' => 'test',
