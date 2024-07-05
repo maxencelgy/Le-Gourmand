@@ -46,6 +46,8 @@ $nav_items = [
         'route' => 'dashboard.order',
         'icon' => 'badge-check',
     ],
+
+
 ];
 @endphp
 <div x-data="{ open: false }"
@@ -68,6 +70,12 @@ $nav_items = [
                 <span>{{ $item['name'] }}</span>
             </a>
         @endforeach
+            <a href="/docs"
+               class="flex items-center rounded-md p-2.5 space-x-3 font-medium {{ request()->routeIs($item['route']) ? 'bg-gray-900 text-white' : 'hover:bg-gray-900 hover:text-white' }} ">
+                @svg("heroicon-s-document-text",'h-5 w-5')
+
+                <span>Documentation</span>
+            </a>
 
     </div>
 </div>

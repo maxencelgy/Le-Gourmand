@@ -39,7 +39,6 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/menu', [PageController::class, 'menu'])->name('menu');
-Route::get('/menu', [PageController::class, 'menu'])->name('menu');
 Route::get('/service', [PageController::class, 'service'])->name('service');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
