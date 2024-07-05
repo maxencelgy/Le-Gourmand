@@ -72,19 +72,19 @@ export default function Register() {
                         required
                     />
                 </div>
-                <div className="mt-4">
-                    <Label forInput="address" value="Addresse" />
+                {/*<div className="mt-4">*/}
+                {/*    <Label forInput="address" value="Addresse" />*/}
 
-                    <Input
-                        type="text"
-                        name="address"
-                        value={data.address}
-                        className="mt-1 block w-full"
-                        autoComplete="address"
-                        handleChange={onHandleChange}
-                        required
-                    />
-                </div>
+                {/*    <Input*/}
+                {/*        type="text"*/}
+                {/*        name="address"*/}
+                {/*        value={data.address}*/}
+                {/*        className="mt-1 block w-full"*/}
+                {/*        autoComplete="address"*/}
+                {/*        handleChange={onHandleChange}*/}
+                {/*        required*/}
+                {/*    />*/}
+                {/*</div>*/}
                 <div className="mt-4">
                     <Label forInput="phone" value="Téléphone" />
 
@@ -98,19 +98,19 @@ export default function Register() {
                         required
                     />
                 </div>
-                <div className="mt-4">
-                    <Label forInput="city" value="Ville" />
+                {/*<div className="mt-4">*/}
+                {/*    <Label forInput="city" value="Ville" />*/}
 
-                    <Input
-                        type="text"
-                        name="city"
-                        value={data.city}
-                        className="mt-1 block w-full"
-                        autoComplete="city"
-                        handleChange={onHandleChange}
-                        required
-                    />
-                </div>
+                {/*    <Input*/}
+                {/*        type="text"*/}
+                {/*        name="city"*/}
+                {/*        value={data.city}*/}
+                {/*        className="mt-1 block w-full"*/}
+                {/*        autoComplete="city"*/}
+                {/*        handleChange={onHandleChange}*/}
+                {/*        required*/}
+                {/*    />*/}
+                {/*</div>*/}
 
                 <div className="mt-4">
                     <Label forInput="password" value="Mot de passe" />

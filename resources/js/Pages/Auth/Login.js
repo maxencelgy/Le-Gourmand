@@ -98,11 +98,11 @@ export default function Login({ status, canResetPassword }) {
                         </Link>
                     </p>
                 </div>
-                <div className="text-left text-sm mt-4 font-medium text-gray-300">
-                    <span className="block">admin: user@user.com</span>
-                    <span className="block">invité: user@user2.com</span>
-                    <span className="block">mot de passe : password</span>
-                </div>
+                {/*<div className="text-left text-sm mt-4 font-medium text-gray-300">*/}
+                {/*    <span className="block">admin: user@user.com</span>*/}
+                {/*    <span className="block">invité: user@user2.com</span>*/}
+                {/*    <span className="block">mot de passe : password</span>*/}
+                {/*</div>*/}
 
                 <div className="flex items-center justify-end mt-4">
                     {canResetPassword && (
