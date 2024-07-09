@@ -13,7 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Upload files to /public_html/Legourmand/
+      # Étape pour téléverser le répertoire 'public' à la racine du site
+      - name: Upload 'public' directory to /public_html/Legourmand2/
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: papier.o2switch.net
@@ -21,16 +22,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: 'ftp'
           local-dir: './public/'
-          server-dir: '/public_html/Legourmand/'
+          server-dir: '/public_html/Legourmand2/'
 
-      # Étape pour les fichiers à envoyer dans /public_html/Legourmand/Legourmand/
-      - name: Upload files to /public_html/Legourmand/Legourmand/
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: papier.o2switch.net
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: 'ftp'
-          local-dir: ./
-          server-dir: /public_html/Legourmand/Legourmand/
-          exclude: 'public/*, node_modules/**, vendor/**, storage/**'
