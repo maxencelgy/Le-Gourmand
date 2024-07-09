@@ -52,7 +52,7 @@ const Home = (props) => {
                         ))}
                     </div>
                     <div className="flex py-16 items-center justify-center">
-                        <LinkBtn className=" mx-auto" href="/menu">Voir tout nos burgers</LinkBtn>
+                        <LinkBtn className=" mx-auto" href="/menu">Voir tous nos burgers</LinkBtn>
                     </div>
                 </div>
             </div>

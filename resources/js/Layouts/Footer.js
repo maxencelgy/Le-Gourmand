@@ -19,7 +19,7 @@ const Footer = () => {
                     <h3 className="text-2xl font-title font-bold">Informations Legales</h3>
                     <Link href={route("privacy_policy")} className="text-md hover:text-yellow-500">Politique de Confidentialité</Link>
                     <Link href={route("cgv")} className="text-md hover:text-yellow-500">Conditions Générales de Vente (CGV)</Link>
-                    <Link href={route("mention")} className="text-md hover:text-yellow-500">Mentions Legales</Link>
+                    <Link href={route("mention")} className="text-md hover:text-yellow-500">Mentions Légales</Link>
                 </div>
                 <div className="flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
                     <span className="text-2xl font-title font-bold">POUR NOUS SUIVRE</span>
