@@ -16,8 +16,9 @@ jobs:
       - name: Upload to FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          ftp-server: papier.o2switch.net
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          server: papier.o2switch.net
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: 'ftp'  # Spécifiez 'ftp' ou 'sftp' selon votre configuration
           local-dir: ./
-          remote-dir: /public_html/Legourmand/Legourmand/
+          server-dir: /public_html/Legourmand/Legourmand/
