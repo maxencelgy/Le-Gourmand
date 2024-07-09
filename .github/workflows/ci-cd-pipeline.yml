@@ -33,5 +33,5 @@ jobs:
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
-          ssh -i private_key -o StrictHostKeyChecking=no wtgm7011@109.234.164.141 ' cd /public_html/Legourmand/Legourmand/ && git pull origin main && composer install && php artisan migrate --force && npm install && npm run prod'
+          ssh -vvv -i private_key -o StrictHostKeyChecking=no wtgm7011@109.234.164.141 ' cd /public_html/Legourmand/Legourmand/ && git pull origin main && composer install && php artisan migrate --force && npm install && npm run prod'
           rm private_key
