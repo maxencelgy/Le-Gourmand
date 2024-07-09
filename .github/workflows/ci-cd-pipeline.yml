@@ -13,7 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Étape pour les fichiers à envoyer dans /public_html/Legourmand/
       - name: Upload files to /public_html/Legourmand/
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
@@ -21,8 +20,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: 'ftp'
-          local-dir: ./public
-          server-dir: /public_html/Legourmand/
+          local-dir: './public/'
+          server-dir: '/public_html/Legourmand/'
 
       # Étape pour les fichiers à envoyer dans /public_html/Legourmand/Legourmand/
       - name: Upload files to /public_html/Legourmand/Legourmand/
